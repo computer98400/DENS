@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.836ea407.css","mappings":"AAAA,QACI,SACJ,CACA,UACI,UACJ","sources":["test.css"],"sourcesContent":[".active {\r\n    color: red;\r\n}\r\n.unactive {\r\n    color: blue;\r\n}"],"names":[],"sourceRoot":""}
