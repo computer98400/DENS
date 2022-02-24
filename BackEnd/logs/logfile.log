@@ -1,0 +1,318 @@
+[INFO ] 2022-02-09 14:22:53.241 [background-preinit] Version - HV000001: Hibernate Validator 6.2.0.Final
+[INFO ] 2022-02-09 14:22:53.298 [restartedMain] BackEndApplication - Starting BackEndApplication using Java 11.0.13 on DESKTOP-KVCQHCD with PID 14712 (C:\S06P12C201\BackEnd\build\classes\java\main started by multicampus in C:\S06P12C201\BackEnd)
+[INFO ] 2022-02-09 14:22:53.304 [restartedMain] BackEndApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2022-02-09 14:22:53.376 [restartedMain] DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO ] 2022-02-09 14:22:53.385 [restartedMain] DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[INFO ] 2022-02-09 14:22:55.005 [restartedMain] RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO ] 2022-02-09 14:22:55.009 [restartedMain] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2022-02-09 14:22:55.368 [restartedMain] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 348 ms. Found 12 JPA repository interfaces.
+[INFO ] 2022-02-09 14:22:55.403 [restartedMain] RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO ] 2022-02-09 14:22:55.405 [restartedMain] RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[INFO ] 2022-02-09 14:22:55.437 [restartedMain] RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ssafy.BackEnd.repository.ProfileKeywordRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+[INFO ] 2022-02-09 14:22:55.441 [restartedMain] RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ssafy.BackEnd.repository.ProfileRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+[INFO ] 2022-02-09 14:22:55.445 [restartedMain] RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ssafy.BackEnd.repository.TeamFeedFileRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+[INFO ] 2022-02-09 14:22:55.447 [restartedMain] RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ssafy.BackEnd.repository.TeamFeedKeywordRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+[INFO ] 2022-02-09 14:22:55.451 [restartedMain] RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ssafy.BackEnd.repository.TeamFeedRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+[INFO ] 2022-02-09 14:22:55.453 [restartedMain] RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ssafy.BackEnd.repository.TeamKeywordRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+[INFO ] 2022-02-09 14:22:55.457 [restartedMain] RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ssafy.BackEnd.repository.TeamMemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+[INFO ] 2022-02-09 14:22:55.459 [restartedMain] RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ssafy.BackEnd.repository.TeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+[INFO ] 2022-02-09 14:22:55.464 [restartedMain] RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ssafy.BackEnd.repository.UserFeedFileRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+[INFO ] 2022-02-09 14:22:55.466 [restartedMain] RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ssafy.BackEnd.repository.UserFeedRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+[INFO ] 2022-02-09 14:22:55.470 [restartedMain] RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ssafy.BackEnd.repository.UserRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+[INFO ] 2022-02-09 14:22:55.471 [restartedMain] RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ssafy.BackEnd.repository.dummyRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+[INFO ] 2022-02-09 14:22:55.475 [restartedMain] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 57 ms. Found 0 Redis repository interfaces.
+[INFO ] 2022-02-09 14:22:56.756 [restartedMain] TomcatWebServer - Tomcat initialized with port(s): 3333 (http)
+[INFO ] 2022-02-09 14:22:56.765 [restartedMain] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-3333"]
+[INFO ] 2022-02-09 14:22:56.766 [restartedMain] StandardService - Starting service [Tomcat]
+[INFO ] 2022-02-09 14:22:56.766 [restartedMain] StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.56]
+[INFO ] 2022-02-09 14:22:56.873 [restartedMain] [/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2022-02-09 14:22:56.873 [restartedMain] ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3486 ms
+[INFO ] 2022-02-09 14:22:57.028 [restartedMain] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2022-02-09 14:22:57.087 [restartedMain] Version - HHH000412: Hibernate ORM core version 5.4.33
+[INFO ] 2022-02-09 14:22:57.254 [restartedMain] Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[INFO ] 2022-02-09 14:22:57.382 [restartedMain] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2022-02-09 14:22:57.734 [restartedMain] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2022-02-09 14:22:57.752 [restartedMain] Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+[INFO ] 2022-02-09 14:22:58.760 [restartedMain] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2022-02-09 14:22:58.770 [restartedMain] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2022-02-09 14:22:59.764 [restartedMain] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2022-02-09 14:23:00.879 [restartedMain] UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 0182fcbc-894d-4c6c-a9ad-5fe0430210c5
+
+[INFO ] 2022-02-09 14:23:01.033 [restartedMain] DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3dce1cce, org.springframework.security.web.context.SecurityContextPersistenceFilter@37a0ca, org.springframework.security.web.header.HeaderWriterFilter@78fd0b9b, org.springframework.security.web.authentication.logout.LogoutFilter@2ad67dc0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6272002a, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6d0b7b5f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@eea58e2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@c20d923, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@746e26c2, org.springframework.security.web.session.SessionManagementFilter@736fd025, org.springframework.security.web.access.ExceptionTranslationFilter@75b37a22, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7ad45b8a]
+[INFO ] 2022-02-09 14:23:01.068 [restartedMain] PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[INFO ] 2022-02-09 14:23:01.262 [restartedMain] OptionalLiveReloadServer - LiveReload server is running on port 35729
+[WARN ] 2022-02-09 14:23:01.464 [restartedMain] ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+[WARN ] 2022-02-09 14:23:01.786 [restartedMain] FreeMarkerAutoConfiguration - Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+[INFO ] 2022-02-09 14:23:01.851 [restartedMain] Http11NioProtocol - Starting ProtocolHandler ["http-nio-3333"]
+[INFO ] 2022-02-09 14:23:01.886 [restartedMain] TomcatWebServer - Tomcat started on port(s): 3333 (http) with context path ''
+[INFO ] 2022-02-09 14:23:01.887 [restartedMain] DocumentationPluginsBootstrapper - Context refreshed
+[INFO ] 2022-02-09 14:23:01.930 [restartedMain] DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+[INFO ] 2022-02-09 14:23:02.002 [restartedMain] ApiListingReferenceScanner - Scanning for api listing references
+[INFO ] 2022-02-09 14:23:02.446 [restartedMain] CachingOperationNameGenerator - Generating unique operation named: processFilesUsingGET_1
+[INFO ] 2022-02-09 14:23:02.449 [restartedMain] CachingOperationNameGenerator - Generating unique operation named: processImgUsingGET_1
+[INFO ] 2022-02-09 14:23:02.489 [restartedMain] BackEndApplication - Started BackEndApplication in 9.747 seconds (JVM running for 11.307)
+[INFO ] 2022-02-09 14:23:08.385 [http-nio-3333-exec-2] [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 2022-02-09 14:23:08.385 [http-nio-3333-exec-2] DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 2022-02-09 14:23:08.386 [http-nio-3333-exec-2] DispatcherServlet - Completed initialization in 1 ms
+[INFO ] 2022-02-09 14:23:08.443 [http-nio-3333-exec-2] TeamController - INFO SUCCESS
+[ERROR] 2022-02-09 14:23:08.445 [http-nio-3333-exec-2] TeamController - ERROR SUCCESS
+[INFO ] 2022-02-09 14:23:16.880 [http-nio-3333-exec-3] TeamController - INFO SUCCESS
+[ERROR] 2022-02-09 14:23:16.880 [http-nio-3333-exec-3] TeamController - ERROR SUCCESS
+[WARN ] 2022-02-09 14:23:31.407 [http-nio-3333-exec-5] ExceptionHandlerExceptionResolver - Failure in @ExceptionHandler com.ssafy.BackEnd.controller.TeamController#createTeam(TeamDto, Long)
+java.lang.IllegalStateException: Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.ssafy.BackEnd.entity.Team> com.ssafy.BackEnd.controller.TeamController.createTeam(com.ssafy.BackEnd.dto.TeamDto,java.lang.Long) throws javassist.NotFoundException: No suitable resolver
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:176) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:428) [spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:75) [spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:142) [spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80) [spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1327) [spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1138) [spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1084) [spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) [spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.3.14.jar:5.3.14]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) [tomcat-embed-core-9.0.56.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.14.jar:5.3.14]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [tomcat-embed-core-9.0.56.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at com.ssafy.BackEnd.filter.JwtRequestFilter.doFilterInternal(JwtRequestFilter.java:115) [main/:?]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.14.jar:5.3.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:121) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:115) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:149) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:218) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) [spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354) [spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267) [spring-web-5.3.14.jar:5.3.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.14.jar:5.3.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.14.jar:5.3.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.14.jar:5.3.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+[ERROR] 2022-02-09 14:23:31.423 [http-nio-3333-exec-5] [dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is javassist.NotFoundException: 팀을 찾을 수 없습니다] with root cause
+javassist.NotFoundException: 팀을 찾을 수 없습니다
+	at com.ssafy.BackEnd.service.TeamServiceImpl.findByTeam(TeamServiceImpl.java:36) ~[main/:?]
+	at com.ssafy.BackEnd.controller.TeamController.findTeam(TeamController.java:107) ~[main/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) ~[tomcat-embed-core-9.0.56.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.56.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at com.ssafy.BackEnd.filter.JwtRequestFilter.doFilterInternal(JwtRequestFilter.java:115) ~[main/:?]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:121) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:115) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:149) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:218) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.5.4.jar:5.5.4]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+[INFO ] 2022-02-09 14:27:33.459 [background-preinit] Version - HV000001: Hibernate Validator 6.2.0.Final
+[INFO ] 2022-02-09 14:27:33.496 [restartedMain] BackEndApplication - Starting BackEndApplication using Java 11.0.13 on DESKTOP-KVCQHCD with PID 14784 (C:\S06P12C201\BackEnd\build\classes\java\main started by multicampus in C:\S06P12C201\BackEnd)
+[INFO ] 2022-02-09 14:27:33.501 [restartedMain] BackEndApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2022-02-09 14:27:33.548 [restartedMain] DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO ] 2022-02-09 14:27:33.549 [restartedMain] DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[INFO ] 2022-02-09 14:27:34.597 [restartedMain] RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO ] 2022-02-09 14:27:34.599 [restartedMain] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2022-02-09 14:27:34.829 [restartedMain] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 222 ms. Found 12 JPA repository interfaces.
+[INFO ] 2022-02-09 14:27:34.849 [restartedMain] RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO ] 2022-02-09 14:27:34.850 [restartedMain] RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[INFO ] 2022-02-09 14:27:34.875 [restartedMain] RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ssafy.BackEnd.repository.ProfileKeywordRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+[INFO ] 2022-02-09 14:27:34.886 [restartedMain] RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ssafy.BackEnd.repository.ProfileRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+[INFO ] 2022-02-09 14:27:34.889 [restartedMain] RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ssafy.BackEnd.repository.TeamFeedFileRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+[INFO ] 2022-02-09 14:27:34.889 [restartedMain] RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ssafy.BackEnd.repository.TeamFeedKeywordRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+[INFO ] 2022-02-09 14:27:34.893 [restartedMain] RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ssafy.BackEnd.repository.TeamFeedRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+[INFO ] 2022-02-09 14:27:34.894 [restartedMain] RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ssafy.BackEnd.repository.TeamKeywordRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+[INFO ] 2022-02-09 14:27:34.897 [restartedMain] RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ssafy.BackEnd.repository.TeamMemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+[INFO ] 2022-02-09 14:27:34.898 [restartedMain] RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ssafy.BackEnd.repository.TeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+[INFO ] 2022-02-09 14:27:34.903 [restartedMain] RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ssafy.BackEnd.repository.UserFeedFileRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+[INFO ] 2022-02-09 14:27:34.904 [restartedMain] RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ssafy.BackEnd.repository.UserFeedRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+[INFO ] 2022-02-09 14:27:34.907 [restartedMain] RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ssafy.BackEnd.repository.UserRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+[INFO ] 2022-02-09 14:27:34.908 [restartedMain] RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ssafy.BackEnd.repository.dummyRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+[INFO ] 2022-02-09 14:27:34.910 [restartedMain] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 49 ms. Found 0 Redis repository interfaces.
+[INFO ] 2022-02-09 14:27:36.220 [restartedMain] TomcatWebServer - Tomcat initialized with port(s): 3333 (http)
+[INFO ] 2022-02-09 14:27:36.232 [restartedMain] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-3333"]
+[INFO ] 2022-02-09 14:27:36.232 [restartedMain] StandardService - Starting service [Tomcat]
+[INFO ] 2022-02-09 14:27:36.233 [restartedMain] StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.56]
+[INFO ] 2022-02-09 14:27:36.354 [restartedMain] [/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2022-02-09 14:27:36.354 [restartedMain] ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2804 ms
+[INFO ] 2022-02-09 14:27:36.515 [restartedMain] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2022-02-09 14:27:36.578 [restartedMain] Version - HHH000412: Hibernate ORM core version 5.4.33
+[INFO ] 2022-02-09 14:27:36.737 [restartedMain] Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[INFO ] 2022-02-09 14:27:36.858 [restartedMain] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2022-02-09 14:27:37.204 [restartedMain] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2022-02-09 14:27:37.220 [restartedMain] Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+[INFO ] 2022-02-09 14:27:38.217 [restartedMain] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2022-02-09 14:27:38.229 [restartedMain] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2022-02-09 14:27:39.099 [restartedMain] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2022-02-09 14:27:39.820 [restartedMain] UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 1b0b3c10-e7f9-4929-b84f-8c062a62f18b
+
+[INFO ] 2022-02-09 14:27:39.919 [restartedMain] DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1f4d1c16, org.springframework.security.web.context.SecurityContextPersistenceFilter@54508f2a, org.springframework.security.web.header.HeaderWriterFilter@5ea87808, org.springframework.security.web.authentication.logout.LogoutFilter@15a3cbd8, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@f81333b, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@52a57964, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1e5fa0ae, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1b0175bd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@fc8785d, org.springframework.security.web.session.SessionManagementFilter@1cb1a845, org.springframework.security.web.access.ExceptionTranslationFilter@5f4f04bb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7c76f6c0]
+[INFO ] 2022-02-09 14:27:39.946 [restartedMain] PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[INFO ] 2022-02-09 14:27:40.142 [restartedMain] OptionalLiveReloadServer - LiveReload server is running on port 35729
+[WARN ] 2022-02-09 14:27:40.320 [restartedMain] ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+[WARN ] 2022-02-09 14:27:40.638 [restartedMain] FreeMarkerAutoConfiguration - Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+[INFO ] 2022-02-09 14:27:40.702 [restartedMain] Http11NioProtocol - Starting ProtocolHandler ["http-nio-3333"]
+[INFO ] 2022-02-09 14:27:40.732 [restartedMain] TomcatWebServer - Tomcat started on port(s): 3333 (http) with context path ''
+[INFO ] 2022-02-09 14:27:40.733 [restartedMain] DocumentationPluginsBootstrapper - Context refreshed
+[INFO ] 2022-02-09 14:27:40.775 [restartedMain] DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+[INFO ] 2022-02-09 14:27:40.839 [restartedMain] ApiListingReferenceScanner - Scanning for api listing references
+[INFO ] 2022-02-09 14:27:41.294 [restartedMain] CachingOperationNameGenerator - Generating unique operation named: processFilesUsingGET_1
+[INFO ] 2022-02-09 14:27:41.297 [restartedMain] CachingOperationNameGenerator - Generating unique operation named: processImgUsingGET_1
+[INFO ] 2022-02-09 14:27:41.330 [restartedMain] BackEndApplication - Started BackEndApplication in 8.187 seconds (JVM running for 9.221)
+[INFO ] 2022-02-09 14:27:46.240 [http-nio-3333-exec-1] [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 2022-02-09 14:27:46.240 [http-nio-3333-exec-1] DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 2022-02-09 14:27:46.241 [http-nio-3333-exec-1] DispatcherServlet - Completed initialization in 1 ms
+[ERROR] 2022-02-09 14:27:46.257 [http-nio-3333-exec-1] JwtRequestFilter - ERROR Logging : {} null
+[INFO ] 2022-02-09 14:27:46.295 [http-nio-3333-exec-1] TeamController - INFO SUCCESS
+[ERROR] 2022-02-09 14:27:46.295 [http-nio-3333-exec-1] TeamController - ERROR SUCCESS
