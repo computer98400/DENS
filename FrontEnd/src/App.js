@@ -1,102 +1,122 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes, useRoutes } from 'react-router-dom'
+import {  useRoutes } from 'react-router-dom'
 
-import Signin from './component/BeforeloginComponent/Signin'
-import Signup from './component/BeforeloginComponent/Signup'
-import Password from './component/BeforeloginComponent/Password'
+import Signin from './component/BeforePage/Signin'
+import Signup from './component/BeforePage/Signup'
+import Password from './component/BeforePage/Password'
 
-import BeforeLogin from './component/commonComponent/BeforeLogin'
-import Firstpage from './component/BeforeloginComponent/Firstpage'
-import Back from './component/commonComponent/Back'
+import BeforeLogin from './component/Default/BeforeLogin'
+import Firstpage from './component/BeforePage/Outerpage'
+import Back from './component/Default/Innerpage'
 
-import Team from './component/TeamComponent/Team'
-import Teamsetting from './component/TeamComponent/Teamsetting'
+import TeamDetail from './component/TeamComponent/TeamDetail'
+import TeamSettings from './component/TeamComponent/TeamSettings'
+import CreateTeam from './component/TeamComponent/CreateTeam'
+import TeamIndex from './component/TeamComponent/TeamIndex'
+import TeamMain from './component/TeamComponent/TeamMain'
 
-import Dashboard from './component/dashboard/Dashboard'
-import Messanger from './component/MessangerComponent/Messanger'
+import Dashboard from './component/Dashboard/Main'
 
-import Search from './component/SearchComponent/Search'
-import Searchid from './component/SearchComponent/Searchid'
+import Search from './component/Search/Main'
+import Searchid from './component/Search/Searchid'
 
-import ProfileInfo from './component/ProfileComponent/ProfileInfo'
-import ProfileKeyword from './component/ProfileComponent/ProfileKeyword'
-import ProfileMain from './component/ProfileComponent/ProfileMain'
+import ProfileInfo from './component/Profile/Info'
+import ProfileKeyword from './component/Profile/Keyword'
+import ProfileMain from './component/Profile/Main'
 
 import Group from './component/GroupComponent/Group'
 import Groupstart from './component/GroupComponent/Groupstart'
 import Groupchannel from './component/GroupComponent/Groupchannel'
 import Grouplink from './component/GroupComponent/Grouplink'
 
-import Error from './component/Error'
-import Page404 from './component/Page404'
-import HeaderBox from './component/commonComponent/HeaderBox'
+import Messenger from './component/Messenger/List'
 
+import Error from './component/Error'
+
+import 'bootstrap/dist/css/bootstrap.min.css'
+import MessageRoom from './component/Messenger/Room'
+import CertiSubmit from './component/CertiSubmit'
+import CertiPassword from './component/BeforePage/Passwordupdate'
+// import auth from './component/hoc/auth'
 const App = () => {
   const routes = useRoutes([
     //로그인하기전 페이지 관리
     //이전엔 상단하단에 페이지만 표시된다.
     {
-      path: '/beforeLogin',
-      element: <BeforeLogin />,
+      path: '/',
+      element: <Firstpage />,
       children: [
-        { index: true, element: <Firstpage /> },
-        { path: '/beforeLogin/signin', element: <Signin /> },
-        { path: '/beforeLogin/signup', element: <Signup /> },
-        { path: '/beforeLogin/password', element: <Password /> },
+        // { index: true, element: <Firstpage /> },
+        { index: true, element: <Signin /> },
+        { path: '/signin', element: <Signin /> },
+        { path: '/signup', element: <Signup /> },
+        { path: '/password', element: <Password /> },
       ],
     },
     //로그인후 페이지 관리
     //공통내용으로 header와 sidebar가 생긴다.
     {
-      path: '/afterlogin',
+      path: '/auth',
       element: <Back />,
       children: [
-        { index: true, elelment: <Dashboard /> },
-        { path: '/afterlogin/dashboard', element: <Dashboard /> },
-        { path: '/afterlogin/messanger', element: <Messanger /> },
+        { index: true, element: <Dashboard /> },
+        { path: '/auth/dashboard', element: <Dashboard /> },
         {
-          path: '/afterlogin/profile',
+          path: '/auth/profile/:id',
           element: <ProfileMain />,
           children: [
-            //  { index: true, element:<ProfileMain />},
-            { path: '/afterlogin/profile/info', element: <ProfileInfo /> },
+            { path: '/auth/profile/:id/info', element: <ProfileInfo /> },
             {
-              path: '/afterlogin/profile/keyword',
+              path: '/auth/profile/:id/keyword',
               element: <ProfileKeyword />,
             },
           ],
         },
+
         {
-          path: '/afterlogin/team/:id',
-          element: <Team number={'팀아이디 부분'} />,
+          path: '/auth/team',
+          element: <TeamMain />,
           children: [
-            { path: '/afterlogin/team/:id/setting', element: <Teamsetting /> },
+            { index: true, element: <TeamIndex /> },
+            { path: '/auth/team/maketeam', element: <CreateTeam /> },
+            { path: '/auth/team/:id', element: <TeamDetail /> },
+            { path: '/auth/team/:id/settings', element: <TeamSettings /> },
           ],
         },
         {
-          path: '/afterlogin/search',
+          path: '/auth/search',
           element: <Search />,
           children: [
-            { index: true, elelment: <Search /> },
-            { path: '/afterlogin/search/:teamid', element: <Searchid /> },
+            { index: true, element: <Search /> },
+            { path: '/auth/search/:teamid', element: <Searchid /> },
           ],
         },
         {
-          path: '/afterlogin/group',
+          path: '/auth/group',
           element: <Group />,
           children: [
-            { index: true, elelment: <Group /> },
-            { path: '/afterlogin/group/start', element: <Groupstart /> },
-            { path: '/afterlogin/group/channel', element: <Groupchannel /> },
-            { path: '/afterlogin/group/link', element: <Grouplink /> },
+            { index: true, element: <Group /> },
+            { path: '/auth/group/start', element: <Groupstart /> },
+            { path: '/auth/group/channel', element: <Groupchannel /> },
+            { path: '/auth/group/link', element: <Grouplink /> },
           ],
         },
         {
-          path: 'error',
-          element: <Error />,
-          children: [{ path: '404page', element: <Page404 /> }],
-        },
+          path: '/auth/messenger', element: <Messenger />,
+        }, 
+        { path: '/auth/messenger/:roomid', element: <MessageRoom /> },
       ],
+    },
+    {
+      path: '*',
+      element: <Error />
+    },
+    {
+      path: '/user/password/:key', element:<CertiPassword/>
+    },
+    {
+      path: '/certi',
+      element: <CertiSubmit />
     },
   ])
 
