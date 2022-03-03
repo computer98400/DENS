@@ -1,9 +1,7 @@
 package com.ssafy.BackEnd.config;
 
 import com.ssafy.BackEnd.filter.JwtAuthenticationFilter;
-//import com.ssafy.BackEnd.filter.JwtRequestFilter;
-import com.ssafy.BackEnd.service.JwtServiceImpl;
-//import com.ssafy.BackEnd.service.JwtTokenProvider;
+import com.ssafy.BackEnd.service.jwt.JwtServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,9 +11,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-//import org.springframework.web.filter.CharacterEncodingFilter;
 
 @Configuration
 @EnableWebSecurity
@@ -58,36 +54,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/certi/**").permitAll()
                 .and()
                 .addFilterBefore(new JwtAuthenticationFilter(jwtService), UsernamePasswordAuthenticationFilter.class);
-
-                //.antMatchers("/*").permitAll();
-
-//                .antMatchers("/profile/*").permitAll();
-
-        //        CharacterEncodingFilter filter = new CharacterEncodingFilter();
-//        filter.setEncoding("UTF-8");
-//        filter.setForceEncoding(true);
-//
-//
-//        http.csrf().disable().formLogin(); // 페이지를 못가게 하는
-//
-//        http.httpBasic().disable();
-//        http.csrf()
-//                .disable()
-//                .headers()
-//                .frameOptions()
-//                .disable();
-//
-//        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-//        http.authorizeRequests()
-//                .antMatchers("/admin/**").hasRole("ADMIN")
-//                .antMatchers("/team/**").hasRole("USER")
-//                .antMatchers("/signin/**").permitAll()
-//                .antMatchers("/signup/**").permitAll()
-////                .antMatchers("/signin").permitAll()
-////                .antMatchers("/signup").permitAll()
-////                .antMatchers("/team/*").hasRole("USER")
-//                .and()
-//                .addFilterBefore(new JwtAuthenticationFilter(jwtService), UsernamePasswordAuthenticationFilter.class);
-
     }
 }

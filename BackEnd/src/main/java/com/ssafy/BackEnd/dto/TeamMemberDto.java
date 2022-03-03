@@ -18,10 +18,4 @@ public class TeamMemberDto {
         //this.teamName = teamName;
     }
 
-//    public TeamMember createTeamMmber() {
-//        return TeamMember.builder()
-//                .email(email)
-//                .teamName(teamName)
-//                .build();
-//    }
 }

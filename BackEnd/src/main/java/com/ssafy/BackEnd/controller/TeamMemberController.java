@@ -5,7 +5,7 @@ import com.ssafy.BackEnd.entity.TeamMember;
 import com.ssafy.BackEnd.entity.User;
 import com.ssafy.BackEnd.exception.CustomException;
 import com.ssafy.BackEnd.exception.ErrorCode;
-import com.ssafy.BackEnd.service.TeamMemberService;
+import com.ssafy.BackEnd.service.team.TeamMemberService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;

@@ -1,9 +1,9 @@
 package com.ssafy.BackEnd.controller;
 
-import com.ssafy.BackEnd.entity.Response;
+
 import com.ssafy.BackEnd.entity.User;
 import com.ssafy.BackEnd.repository.UserRepository;
-import com.ssafy.BackEnd.service.UserService;
+import com.ssafy.BackEnd.service.user.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;

@@ -41,29 +41,14 @@ public class User implements UserDetails {
 
     private LocalDateTime createDate;
 
-//    @Column(name = "identity")
-//    @Enumerated(EnumType.STRING)
-    //@ElementCollection(fetch = FetchType.EAGER)
-    //@Builder.Default
     @Enumerated(EnumType.STRING)
     private UserIdentity identity;
 
-//    @ElementCollection(fetch = FetchType.EAGER)
-//    @Builder.Default
-//    private List<String> roles = new ArrayList<>();
-    //private List<UserIdentity> identity = new ArrayList<>();
-
-//    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-//    @JoinColumn(name = "salt_id")
-//    private Salt salt;
-
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "profile_id")
-    //@JsonIgnore
     private Profile profile;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    //@JsonIgnore
     private List<TeamMember> team_member = new ArrayList<>( );
 
     @Builder
@@ -93,16 +78,6 @@ public class User implements UserDetails {
         }
 
         return authorities;
-//            Collection<UserIdentity> userIdentities) {
-//            List<GrantedAuthority> authorities = new ArrayList<>();
-//
-//            for(UserIdentity identity : userIdentities){
-//                authorities.add(new SimpleGrantedAuthority(identity.name()));
-//                identity.
-//            }
-//        return this.identity.stream()
-//                .map(SimpleGrantedAuthority::new)
-//                .collect(UserIdentity);
     }
 
     @Override

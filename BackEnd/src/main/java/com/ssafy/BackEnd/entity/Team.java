@@ -46,9 +46,6 @@ public class Team extends CreateTimeEntity {
     @JsonIgnore
     List<TeamFeed> team_feed = new ArrayList<>();
 
-//    @CreatedDate
-//    LocalDateTime create_time;
-
     @Builder
     public Team(String title, String content) {
         this.title = title;

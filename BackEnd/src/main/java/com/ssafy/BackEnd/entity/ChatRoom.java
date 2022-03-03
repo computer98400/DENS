@@ -39,8 +39,4 @@ public class ChatRoom implements Serializable {
     }
 }
 
-//    public void addChatMessages(ChatMessage chatMessage) {
-//        this.chatMessages.add(chatMessage);
-//    }
-
 

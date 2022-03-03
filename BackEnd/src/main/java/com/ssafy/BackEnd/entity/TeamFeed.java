@@ -26,12 +26,6 @@ public class TeamFeed extends BaseTimeEntity{
 
     String content;
 
-//    @CreatedDate
-//    LocalDateTime create_time;
-//
-//    @LastModifiedDate
-//    LocalDateTime modify_time;
-
     String writer;
 
     @ManyToOne

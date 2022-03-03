@@ -18,7 +18,7 @@ import javax.persistence.*;
 public class TeamMember {
     @Id
     @GeneratedValue
-    long teammember_id; // 혹시? notblank ??
+    long teammember_id;
 
     @Column(name = "team_identity")
     @Enumerated(EnumType.STRING)
@@ -30,7 +30,6 @@ public class TeamMember {
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "email")
-    //@JsonIgnore
     User user;
 
     @Builder
