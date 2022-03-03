@@ -30,10 +30,6 @@ public class RedisConfig {
     @Value("${spring.redis.port}")
     private int redisPort;
 
-//    @Bean
-//    public RedisConnectionFactory redisConnectionFactory(){
-//        return new LettuceConnectionFactory(redisHost, redisPort);
-//    }
 
     /**
      * 단일 Topic 사용을 위한 Bean 설정
@@ -77,11 +73,5 @@ public class RedisConfig {
         return redisTemplate;
     }
 
-//    @Bean
-//    public RedisTemplate<?, ?> redisTemplate() {
-//        RedisTemplate<?, ?> redisTemplate = new RedisTemplate<>();
-//        redisTemplate.setConnectionFactory(redisConnectionFactory());
-//        return redisTemplate;
-//    }
 }
 

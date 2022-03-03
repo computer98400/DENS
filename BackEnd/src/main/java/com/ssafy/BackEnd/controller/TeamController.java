@@ -5,7 +5,9 @@ import com.ssafy.BackEnd.entity.*;
 import com.ssafy.BackEnd.exception.CustomException;
 import com.ssafy.BackEnd.exception.ErrorCode;
 import com.ssafy.BackEnd.repository.*;
-import com.ssafy.BackEnd.service.*;
+import com.ssafy.BackEnd.service.etc.HashTagAlgorithm;
+import com.ssafy.BackEnd.service.profile.ProfileService;
+import com.ssafy.BackEnd.service.team.TeamMemberService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import javassist.NotFoundException;
@@ -19,7 +21,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
-import com.ssafy.BackEnd.service.TeamService;
+import com.ssafy.BackEnd.service.team.TeamService;
 import com.ssafy.BackEnd.repository.TeamRepository;
 import com.ssafy.BackEnd.entity.Team;
 
@@ -57,7 +59,6 @@ public class TeamController {
             logger.error("NO ALL TEAL LIST");
             System.out.println("전체 팀 목록이 없습니다");
             return new ResponseEntity<List<Team>>(teams, HttpStatus.OK);
-            //throw new CustomException(ErrorCode.NO_DATA_ERROR);
         }
         logger.info("INFO SUCCESS");
 
@@ -72,7 +73,6 @@ public class TeamController {
         if (my_teams.isEmpty()) {
             logger.error("NO MY TEAM");
             System.out.println("내 팀 목록이 없습니다");
-            //throw new CustomException(ErrorCode.NO_DATA_ERROR);
         }
         logger.info("INFO SUCCESS");
 
@@ -116,7 +116,6 @@ public class TeamController {
         if(team == null) {
              logger.error("NO TEAM INFO");
              throw new CustomException(ErrorCode.NO_DATA_ERROR);
-             //return new ResponseEntity<Team>(team, HttpStatus.OK);
          }
 
         System.out.println("team id : "+team.getTeam_id());
@@ -156,8 +155,7 @@ public class TeamController {
         if (team == null) {
             logger.error("NO TEAM PROFILE INFO");
             throw new CustomException(ErrorCode.NO_DATA_ERROR);
-        }
-        //System.out.println("팀제목" + team.getContent());
+        };
         Team newTeam = teamService.modifyTeamProfile(teamDto, team, profile_id);
         logger.info("INFO SUCCESS");
 

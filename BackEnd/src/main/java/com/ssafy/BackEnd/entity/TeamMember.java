@@ -1,7 +1,6 @@
 package com.ssafy.BackEnd.entity;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Builder;
 import lombok.Getter;
@@ -18,7 +17,7 @@ import javax.persistence.*;
 public class TeamMember {
     @Id
     @GeneratedValue
-    long teammember_id; // 혹시? notblank ??
+    long teammember_id;
 
     @Column(name = "team_identity")
     @Enumerated(EnumType.STRING)
@@ -30,7 +29,6 @@ public class TeamMember {
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "email")
-    //@JsonIgnore
     User user;
 
     @Builder

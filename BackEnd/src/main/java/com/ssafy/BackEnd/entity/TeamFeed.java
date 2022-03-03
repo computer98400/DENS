@@ -4,13 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.*;
-import org.apache.tomcat.jni.Local;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 import reactor.util.annotation.Nullable;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,12 +21,6 @@ public class TeamFeed extends BaseTimeEntity{
     long teamfeed_id;
 
     String content;
-
-//    @CreatedDate
-//    LocalDateTime create_time;
-//
-//    @LastModifiedDate
-//    LocalDateTime modify_time;
 
     String writer;
 

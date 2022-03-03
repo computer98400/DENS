@@ -2,44 +2,30 @@ package com.ssafy.BackEnd.controller;
 import com.ssafy.BackEnd.entity.ChatMessage;
 
 import com.ssafy.BackEnd.entity.Profile;
-//import com.ssafy.BackEnd.pubsub.RedisPublisher;
 import com.ssafy.BackEnd.repository.ChatMessageRedisRepository;
-import com.ssafy.BackEnd.repository.ChatMessageRepository;
 import com.ssafy.BackEnd.repository.ProfileRepository;
-import com.ssafy.BackEnd.repository.UserRepository;
-import com.ssafy.BackEnd.service.JwtService;
-import com.ssafy.BackEnd.service.JwtServiceImpl;
-import com.ssafy.BackEnd.service.RedisUtil;
+import com.ssafy.BackEnd.service.jwt.JwtServiceImpl;
+import com.ssafy.BackEnd.service.chat.RedisUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.data.redis.core.HashOperations;
-import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.data.redis.listener.ChannelTopic;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
-import org.springframework.messaging.simp.annotation.SendToUser;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
 
 @RequiredArgsConstructor
 @Controller

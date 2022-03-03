@@ -2,13 +2,15 @@ package com.ssafy.BackEnd.controller;
 
 import com.ssafy.BackEnd.dto.UserDto;
 import com.ssafy.BackEnd.entity.*;
-import com.ssafy.BackEnd.entity.Request.RequestChangePassword1;
 import com.ssafy.BackEnd.entity.Request.RequestChangePassword2;
 import com.ssafy.BackEnd.entity.Request.RequestVerifyEmail;
 import com.ssafy.BackEnd.exception.CustomException;
 import com.ssafy.BackEnd.exception.ErrorCode;
-import com.ssafy.BackEnd.service.*;
 
+import com.ssafy.BackEnd.service.auth.AuthService;
+import com.ssafy.BackEnd.service.chat.RedisUtil;
+import com.ssafy.BackEnd.service.cookie.CookieService;
+import com.ssafy.BackEnd.service.jwt.JwtServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +18,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,9 +25,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -42,7 +41,6 @@ public class MainController {
     
     private final AuthService authService;
 
-    private final dummyService dummyService;
 
     @PostMapping("/signup")
     @ApiOperation(value = "회원가입", notes = "사용자의 정보를 입력 받고 'success'면 회원가입 or 'fail이면 에러메세지", response = String.class)
@@ -86,7 +84,6 @@ public class MainController {
             response.setResponse("error");
             response.setMessage("유효하지 않은 key값입니다.");
             response.setData(null);
-            //return new ResponseEntity<Response>(response, HttpStatus.BAD_REQUEST);
             throw new CustomException("invalid key", ErrorCode.PASSWORD_VERIFY_ERROR);
         }
     }

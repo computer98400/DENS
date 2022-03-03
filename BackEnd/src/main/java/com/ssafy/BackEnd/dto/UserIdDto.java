@@ -1,11 +1,9 @@
 package com.ssafy.BackEnd.dto;
 
-import com.ssafy.BackEnd.entity.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 
-import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 @Builder

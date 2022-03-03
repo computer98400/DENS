@@ -2,12 +2,10 @@ package com.ssafy.BackEnd.controller;
 
 import com.ssafy.BackEnd.entity.Profile;
 import com.ssafy.BackEnd.entity.Team;
-import com.ssafy.BackEnd.entity.User;
 import com.ssafy.BackEnd.exception.CustomException;
 import com.ssafy.BackEnd.exception.ErrorCode;
-import com.ssafy.BackEnd.service.ProfileService;
-import com.ssafy.BackEnd.service.TeamService;
-import com.ssafy.BackEnd.service.UserService;
+import com.ssafy.BackEnd.service.profile.ProfileService;
+import com.ssafy.BackEnd.service.team.TeamService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import javassist.NotFoundException;
@@ -16,10 +14,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -34,22 +30,20 @@ public class SearchController {
 
     @GetMapping("/user")
     @ApiOperation(value = "유저이름으로 유저 검색")
-    public ResponseEntity<List<Profile>> findSearchedUsers(String keyword) throws NotFoundException{
+    public ResponseEntity<List<Profile>> findSearchedUsers(String keyword) throws NotFoundException {
         HttpStatus status;
         List<Profile> userList = profileService.showFindUserList(keyword);
-        System.out.println("전달 받은 값 : "+keyword);
-        if(userList != null) {
+        System.out.println("전달 받은 값 : " + keyword);
+        if (userList != null) {
             status = HttpStatus.OK;
-            System.out.println("success\n"+userList.get(0).getName());
+            System.out.println("success\n" + userList.get(0).getName());
             logger.info("INFO SUCCESS");
         } else {
             status = HttpStatus.NO_CONTENT;
             System.out.println("no searched userlist");
-            logger.info("SEARCHED NULL");
-            //throw new CustomException("no searched userlist", ErrorCode.NO_DATA_ERROR);
+            logger.info("NO SEARCHED USERLIST");
         }
-
-        return new ResponseEntity<>(userList, status);
+            return new ResponseEntity<>(userList, status);
     }
 
     @GetMapping("/user/{profile_id}")

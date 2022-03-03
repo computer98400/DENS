@@ -2,17 +2,15 @@ package com.ssafy.BackEnd.controller;
 
 import com.ssafy.BackEnd.dto.TeamFeedAddForm;
 import com.ssafy.BackEnd.dto.TeamFeedDto;
-import com.ssafy.BackEnd.dto.UserFeedDto;
 import com.ssafy.BackEnd.entity.*;
 import com.ssafy.BackEnd.exception.CustomException;
 import com.ssafy.BackEnd.exception.ErrorCode;
 import com.ssafy.BackEnd.repository.ProfileRepository;
 import com.ssafy.BackEnd.repository.TeamFeedRepository;
-import com.ssafy.BackEnd.service.FileStore;
-import com.ssafy.BackEnd.service.TeamFeedFileServiceImpl;
-import com.ssafy.BackEnd.service.TeamFeedService;
-import com.ssafy.BackEnd.service.TeamService;
-import com.ssafy.BackEnd.util.UserFeedAddForm;
+import com.ssafy.BackEnd.service.file.FileStore;
+import com.ssafy.BackEnd.service.team.TeamFeedFileServiceImpl;
+import com.ssafy.BackEnd.service.team.TeamFeedService;
+import com.ssafy.BackEnd.service.team.TeamService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import javassist.NotFoundException;
@@ -20,7 +18,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.core.config.plugins.validation.constraints.Required;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -28,10 +25,7 @@ import org.springframework.http.ContentDisposition;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.parameters.P;
-import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -42,11 +36,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.util.UriUtils;
 
 
