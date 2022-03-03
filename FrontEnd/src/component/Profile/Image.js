@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Image } from 'react-bootstrap'
-import { getImage } from '../../api/profile'
-import { Link, useNavigate } from 'react-router-dom'
+import { Image } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 import { store } from '../..'
 export default function ProfileImage({
   id,
   fileImage,
-  onLoad,
-  ImageUpload,
   authAxios,
   idCheck,
+  onLoad,
+  onImageUpload,
 }) {
   const [image, setImage] = useState('')
   const nav = useNavigate()
@@ -24,13 +23,11 @@ export default function ProfileImage({
         const url = window.URL.createObjectURL(
           new Blob([res.data], { type: res.headers['content-type'] })
         )
-        console.log(url)
         setImage(url)
-
       })
       .catch((error) => console.log(error))
   }, [])
-  function sendMessanger() {
+  function onMessageSend() {
     authAxios
       .post(`/chat/room/${userId}/${id}`)
       .then((res) => {
@@ -101,7 +98,7 @@ export default function ProfileImage({
                 {fileImage && (
                   <button
                     class="btn btn-primary"
-                    onClick={ImageUpload}
+                    onClick={onImageUpload}
                     size="sm"
                   >
                     저장하기
@@ -110,7 +107,7 @@ export default function ProfileImage({
               </div>
             ) : (
               <div>
-                <button className="btn btn-primary" onClick={sendMessanger}>
+                <button className="btn btn-primary" onClick={onMessageSend}>
                   메세지
                 </button>
               </div>

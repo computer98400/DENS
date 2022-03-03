@@ -1,20 +1,12 @@
 import { store } from '../..'
 import { API_BASE_URL } from '../../config'
 import React, { useState, useEffect } from 'react'
-import { Outlet, useParams, useNavigate } from 'react-router-dom'
-import {
-  profileTest,
-  profileUpdate,
-  putKeyword,
-  ImgUpload,
-  getKeyword,
-} from '../../api/profile'
-import { Container, Row, Stack } from 'react-bootstrap'
-import ProfileGit from './Git'
-import ProfileTagCloud from './TagCloud'
-import ProfileImage from './Image'
-import ProfileInfo from './Info'
-import ProfileKeyword from './Keyword'
+import { Outlet, useParams } from 'react-router-dom'
+import Git from './Git'
+import TagCloud from './TagCloud'
+import Image from './Image'
+import Info from './Info'
+import Keyword from './Keyword'
 import axios from 'axios'
 import { useCookies } from 'react-cookie'
 import '../../css/profile.css'
@@ -60,23 +52,27 @@ export default function ProfileMain() {
     authAxios
       .get(`/profile/${id}`)
       .then((res) => {
-        setInputs({
-          ...inputs,
-          name: res.data.name,
-          position: res.data.position,
-          stack: res.data.stack,
-          email: res.data.email,
-          git: !git,
-          gitId: res.data.git_id,
-        })
+        onInputs()
       })
       .catch((error) => console.log(error))
   }, [])
   useEffect(() => {
-    getKeywords()
+    onKeywordsGet()
   }, [position, stack])
 
-  function getKeywords() {
+  function onInputs() {
+    setInputs({
+      ...inputs,
+      name: res.data.name,
+      position: res.data.position,
+      stack: res.data.stack,
+      email: res.data.email,
+      gitId: res.data.git_id,
+      git: !git,
+    })
+  }
+
+  function onKeywordsGet() {
     authAxios
       .get(`/profile/keyword/${id}`)
       .then((res) => {
@@ -99,7 +95,7 @@ export default function ProfileMain() {
     words.push({ value: position, count: c }, { value: stack, count: c })
     return words
   }
-  function update() {
+  function onUpdate() {
     authAxios
       .put(`/profile/${id}`, {
         position: position,
@@ -107,35 +103,25 @@ export default function ProfileMain() {
         git_id: gitId,
       })
       .then((res) => {
-        setInputs({
-          ...inputs,
-          name: res.data.name,
-          position: res.data.position,
-          stack: res.data.stack,
-          email: res.data.email,
-          gitId: res.data.git_id,
-          git: !git,
-          edit: !edit,
-        })
+        setInputs({ edit: !edit })
+        onInputs()
       })
       .catch((error) => console.log(id))
-
-    getKeywords()
+    onKeywordsGet()
   }
 
-  function putKeywords() {
+  function onKeywords() {
     authAxios
       .post(`/profile/keyword/${id}`, null, { params: { content: keyword } })
       .then((res) => {
         setKeywords([])
-        getKeywords()
-        console.log(keywords)
+        onKeywordsGet()
         setInputs({ ...inputs, keyword: '' })
       })
       .catch((error) => console.log(error))
   }
 
-  function ImageUpload(e) {
+  function onImageUpload(e) {
     const formData = new FormData()
     formData.append('file', files[0])
     authAxios
@@ -175,39 +161,39 @@ export default function ProfileMain() {
         <div className="main-body">
           <div class="row gutters-sm">
             <div class="col-md-4 mb-3">
-              <ProfileImage
+              <Image
                 id={id}
                 fileImage={fileImage}
                 userId={userId}
-                onLoad={onLoad}
-                ImageUpload={ImageUpload}
                 authAxios={authAxios}
                 idCheck={idCheck}
+                onLoad={onLoad}
+                onImageUpload={onImageUpload}
               />
-              <ProfileInfo
+              <Info
                 id={id}
                 name={name}
                 edit={edit}
                 position={position}
                 stack={stack}
                 email={email}
-                onSave={onSave}
-                update={update}
-                onEdit={onEdit}
                 gitId={gitId}
                 idCheck={idCheck}
+                onSave={onSave}
+                onUpdate={onUpdate}
+                onEdit={onEdit}
               />
             </div>
             <div className="col-md-8">
-              <ProfileTagCloud keywords={keywords} />
+              <TagCloud keywords={keywords} />
 
-              <ProfileKeyword
+              <Keyword
                 keyword={keyword}
                 onSave={onSave}
-                putKeywords={putKeywords}
+                onKeywords={onKeywords}
               />
 
-              <ProfileGit edit={edit} gitId={gitId} onSave={onSave} />
+              <Git edit={edit} gitId={gitId} onSave={onSave} />
             </div>
 
             <Outlet />

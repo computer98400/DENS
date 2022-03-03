@@ -1,5 +1,4 @@
 import React from 'react'
-import { TagCloud } from 'react-tagcloud'
 import '../../css/profile.css'
 export default function ProfileGit({ edit, gitId, onSave }) {
   return (
