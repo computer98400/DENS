@@ -47,7 +47,7 @@ public class TeamController {
     TeamKeywordRepository teamKeywordRepository;
 
     private HashTagAlgorithm hashTagAlgorithm = new HashTagAlgorithm();
-    //@ExceptionHandler({NotFoundException.class, NullPointerException.class})
+
     @GetMapping
     @ApiOperation(value = "팀 목록 가져오기")
     public ResponseEntity<List<Team>> getAllTeams() throws NotFoundException {
@@ -126,9 +126,8 @@ public class TeamController {
 
     }
 
-    //@ExceptionHandler({NotFoundException.class, NullPointerException.class})
     @PutMapping("/{profile_id}/{team_id}")
-    @ApiOperation(value = "팀 수정") //팀 수정이 무엇에 대한 수정인가(name과 content에 대한 수정??)
+    @ApiOperation(value = "팀 제목 수정")
     public ResponseEntity<Team> modifyTeam(@PathVariable long profile_id, @PathVariable long team_id, @RequestBody TeamDto teamDto) throws NotFoundException {
         Team findTeam = teamService.findByTeam(team_id);
         if (findTeam == null) {
@@ -141,7 +140,6 @@ public class TeamController {
         return new ResponseEntity<Team>(team, HttpStatus.OK);
     }
 
-    //@ExceptionHandler({NotFoundException.class, NullPointerException.class})
     @DeleteMapping("/{team_id}")
     @ApiOperation(value = "팀 삭제")
     public ResponseEntity<Void> deleteTeam(@PathVariable Long team_id) {

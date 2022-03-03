@@ -117,6 +117,8 @@ import com.ssafy.BackEnd.repository.ChatRoomRedisRepository;
 import com.ssafy.BackEnd.repository.ProfileRepository;
 import com.ssafy.BackEnd.repository.UserRepository;
 import com.ssafy.BackEnd.service.JwtServiceImpl;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -143,6 +145,7 @@ import java.util.stream.Stream;
 @RestController
 @CrossOrigin
 @RequestMapping("/chat")
+@Api(tags = "채팅방 컨트롤러 Api")
 public class ChatRoomController {
 
     private static final Logger logger = LogManager.getLogger(ChatRoomController.class);
@@ -161,12 +164,14 @@ public class ChatRoomController {
 
 
     @GetMapping("/rooms")
+    @ApiOperation(value = "채팅방 전체 조회")
     public ResponseEntity<Iterable<ChatRoom>> rooms() {
         Iterable<ChatRoom> all = chatRoomRedisRepository.findAll();
         return new ResponseEntity<Iterable<ChatRoom>>(all, HttpStatus.OK);
     }
 
     @GetMapping("/rooms/{profileId}")
+    @ApiOperation(value = "유저가 속한 채팅방 조회")
     public ResponseEntity<Iterable<ChatRoom>> room(@PathVariable Long profileId) {
         Iterable<ChatRoom> chatRooms = chatRoomRedisRepository.findAll();
         Profile profile = profileRepository.findById(profileId).get();
@@ -182,6 +187,7 @@ public class ChatRoomController {
     }
 
     @PostMapping("/room/{profileId1}/{profileId2}")
+    @ApiOperation(value="채팅방 생성")
     public ResponseEntity<ChatRoom> createRoom(@PathVariable Long profileId1, @PathVariable Long profileId2) {
         Profile profile1 = profileRepository.findById(profileId1).get();
         ChatUserDto user1 = new ChatUserDto();
@@ -199,11 +205,9 @@ public class ChatRoomController {
             return new ResponseEntity<ChatRoom>(save, HttpStatus.CREATED);
         } else if (findRoom1 == null && findRoom2 != null) {
             logger.error("chatroom is already exists");
-//            throw new CustomException(ErrorCode.ALREADY_EXISTS_CHATROOM);
             return new ResponseEntity<ChatRoom>(findRoom2, HttpStatus.FOUND);
         } else if (findRoom1 != null && findRoom2 == null) {
             logger.error("Chatroom is already exists");
-//            throw new CustomException(ErrorCode.ALREADY_EXISTS_CHATROOM);
             return new ResponseEntity<ChatRoom>(findRoom1, HttpStatus.FOUND);
         } else {
             logger.error("cannot create room");
@@ -212,6 +216,7 @@ public class ChatRoomController {
     }
 
     @GetMapping("/room/enter/{roomId}/{profileId}")
+    @ApiOperation(value="채팅방 입장")
     public ResponseEntity<ChatRoom> enterRoom(Model model, @PathVariable String roomId, @PathVariable Long profileId) {
         Profile profile = profileRepository.findById(profileId).get();
         ChatRoom findRoom = chatRoomRedisRepository.findByRoomId(roomId);
@@ -222,6 +227,7 @@ public class ChatRoomController {
     }
 
     @GetMapping("/room/{roomId}")
+    @ApiOperation(value = "채팅방 정보 조회")
     public ResponseEntity<ChatRoom> roomInfo(@PathVariable String roomId) {
         ChatRoom chatRoom = chatRoomRedisRepository.findByRoomId(roomId);
         if (chatRoom == null) {
@@ -232,6 +238,7 @@ public class ChatRoomController {
     }
 
     @GetMapping("/user")
+    @ApiOperation(value = "유저 정보 가져오기")
     public LoginInfo getUserInfo(HttpServletRequest request) {
         String authorization = jwtService.resolveToken(request);
         String email = jwtService.getUserEmail(authorization);
@@ -239,20 +246,4 @@ public class ChatRoomController {
         String name = profile.getName();
         return LoginInfo.builder().name(name).token(authorization).build();
     }
-//
-//    @GetMapping("/user")
-//    public void getUserInfo(HttpServletRequest request) {
-//        String authorization = request.getHeader("Authorization");
-//        System.out.println(authorization);
-//        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-//        auth.getDetails()
-//        return LoginInfo.builder().name(name).token(jwtService.createToken(name)).build();
-
-//    @GetMapping("/user")
-//    @ResponseBody
-//    public LoginInfo getUserInfo() {
-//        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-//        String name = auth.getName();
-//        return LoginInfo.builder().name(name).token(jwtService.createToken(name)).build();
-//    }
 }

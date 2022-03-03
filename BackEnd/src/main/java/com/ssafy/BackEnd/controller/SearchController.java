@@ -8,6 +8,8 @@ import com.ssafy.BackEnd.exception.ErrorCode;
 import com.ssafy.BackEnd.service.ProfileService;
 import com.ssafy.BackEnd.service.TeamService;
 import com.ssafy.BackEnd.service.UserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import javassist.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.apache.logging.log4j.LogManager;
@@ -23,6 +25,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/search")
 @RequiredArgsConstructor
+@Api(tags = "검색 컨트롤러 API")
 public class SearchController {
     private static final Logger logger = LogManager.getLogger(SearchController.class);
 
@@ -30,6 +33,7 @@ public class SearchController {
     private final TeamService teamService;
 
     @GetMapping("/user")
+    @ApiOperation(value = "유저이름으로 유저 검색")
     public ResponseEntity<List<Profile>> findSearchedUsers(String keyword) throws NotFoundException{
         HttpStatus status;
         List<Profile> userList = profileService.showFindUserList(keyword);
@@ -49,6 +53,7 @@ public class SearchController {
     }
 
     @GetMapping("/user/{profile_id}")
+    @ApiOperation(value = "프로필 아이디로 프로필 반환")
     public ResponseEntity<Profile> findSearchOneProfile(@PathVariable Long profile_id) throws NotFoundException {
         Profile profile = profileService.findById(profile_id).get();
         if(profile == null)
@@ -62,6 +67,7 @@ public class SearchController {
     }
 
     @GetMapping("/team/{team_id}")
+    @ApiOperation(value = "팀 아이디로 팀 반환")
     public ResponseEntity<Team> findSearchOneTeam(@PathVariable Long team_id) throws NotFoundException {
         Team team = teamService.findByTeam(team_id);
         if(team == null){
@@ -73,6 +79,7 @@ public class SearchController {
     }
 
     @GetMapping("/team")
+    @ApiOperation(value = "팀 이름으로 팀 검색")
     public ResponseEntity<List<Team>> findSearchedTeams(@RequestParam String keyword) throws NotFoundException{
         HttpStatus status;
         List<Team> teamList = teamService.showFindTeamList(keyword);
@@ -92,6 +99,7 @@ public class SearchController {
     }
 
     @GetMapping("/keyword/user")
+    @ApiOperation(value = "키워드로 유저 검색")
     public ResponseEntity<List<Profile>> findSearchedUserByKeyword(@RequestParam String keyword) {
         List<Profile> searchedUsers = profileService.findUserByKeyword(keyword);
         if (searchedUsers.isEmpty()) {
@@ -104,6 +112,7 @@ public class SearchController {
     }
 
     @GetMapping("/keyword/team")
+    @ApiOperation(value = "키워드로 팀 검색")
     public ResponseEntity<List<Team>> findSearchedTeamByKeyword(@RequestParam String keyword) {
         List<Team> searchedTeams = teamService.findTeamByKeyword(keyword);
         if (searchedTeams == null) {

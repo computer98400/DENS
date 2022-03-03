@@ -13,6 +13,7 @@ import com.ssafy.BackEnd.service.TeamFeedFileServiceImpl;
 import com.ssafy.BackEnd.service.TeamFeedService;
 import com.ssafy.BackEnd.service.TeamService;
 import com.ssafy.BackEnd.util.UserFeedAddForm;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import javassist.NotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -49,10 +50,12 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.util.UriUtils;
 
 
+@Api(tags = "팀 피드 컨트롤러")
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/teamfeed")
 @Slf4j
+
 public class TeamFeedController {
     private static final Logger logger = LogManager.getLogger(TeamFeedController.class);
 
@@ -97,6 +100,7 @@ public class TeamFeedController {
         return new ResponseEntity<List<TeamFeed>>(teamfeeds, HttpStatus.OK);
     }
 
+    @ApiOperation(value = "팀 피드 불러오기")
     @GetMapping("/ourteamfeed/{team_id}")
     public ResponseEntity<List<TeamFeed>> findOurTeamFeed(@PathVariable long team_id) {
         List<TeamFeed> our_teamfeeds = teamFeedService.showOurTeamFeedList(team_id);
@@ -138,6 +142,7 @@ public class TeamFeedController {
 
     @ResponseBody
     @GetMapping("/images/{filename}")
+    @ApiOperation(value = "이미지 가져오기")
     public UrlResource processImg(@PathVariable String filename) throws MalformedURLException {
 
         logger.info("INFO SUCCESS");
@@ -145,6 +150,7 @@ public class TeamFeedController {
     }
 
     @GetMapping("/files/{filename}")
+    @ApiOperation(value = "파일 가져오기")
     public ResponseEntity<UrlResource> processFiles(@PathVariable String filename, @RequestParam String originName) throws MalformedURLException {
         UrlResource urlResource = new UrlResource("file:" + fileStore.createPath(filename, FileType.GENERAL));
         String encodedUploadFileName = UriUtils.encode(originName, StandardCharsets.UTF_8);
@@ -157,12 +163,14 @@ public class TeamFeedController {
     }
 
     @DeleteMapping("/files/{filename}")
+    @ApiOperation(value = "파일 삭제하기")
     public void deleteFiles(@PathVariable String filename) {
         teamFeedFileService.deleteFile(filename);
         logger.info("INFO SUCCESS");
     }
 
     @GetMapping("/download/{filename}")
+    @ApiOperation(value = "파일 다운로드 하기")
     public ResponseEntity<Resource> download(@PathVariable String filename) throws IOException {
         Path path = Paths.get("/home/ubuntu/files/generals/" + filename);
         String contentType = Files.probeContentType(path);

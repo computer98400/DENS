@@ -10,6 +10,8 @@ import com.ssafy.BackEnd.repository.UserRepository;
 import com.ssafy.BackEnd.service.JwtService;
 import com.ssafy.BackEnd.service.JwtServiceImpl;
 import com.ssafy.BackEnd.service.RedisUtil;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -41,6 +43,7 @@ import java.util.Map;
 
 @RequiredArgsConstructor
 @Controller
+@Api(tags = "채팅 컨트롤러 Api")
 public class ChatController {
 
 
@@ -73,9 +76,6 @@ public class ChatController {
      */
     @MessageMapping("/chat/{roomId}")
     public void message(ChatMessage message, @Header("token") String token, @DestinationVariable("roomId") String roomId) {
-        System.out.println("===========message=========");
-        System.out.println(message.getMessage());
-        System.out.println(token);
         String email = jwtService.getUserEmail(token);
         System.out.println(email);
         Profile profile = profileRepository.findByEmail(email).get();
@@ -84,9 +84,7 @@ public class ChatController {
         message.setSender(name);
         message.setSenderId(profile.getProfile_id());
         message.setTime(LocalDateTime.now());
-        System.out.println(ChatMessage.MessageType.ENTER.equals(message.getType()));
-        System.out.println("type: " + message.getType());
-        System.out.println("enum : " + ChatMessage.MessageType.ENTER);
+
         if (ChatMessage.MessageType.ENTER.equals(message.getType())) {
             message.setSender("[알림]");
             message.setSenderId(null);
@@ -112,6 +110,7 @@ public class ChatController {
 
     @GetMapping("/chat/messages/{roomId}")
     @ResponseBody
+    @ApiOperation(value="채팅방 메세지 전체 조회")
     public List<ChatMessage> messages(@PathVariable String roomId) {
         return chatMessageRedisRepository.findByRoomId(roomId);
     }

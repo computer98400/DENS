@@ -11,6 +11,7 @@ import com.ssafy.BackEnd.service.FileStore;
 import com.ssafy.BackEnd.service.ProfileService;
 import com.ssafy.BackEnd.service.UserFeedService;
 import com.ssafy.BackEnd.util.UserFeedAddForm;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import javassist.NotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -33,6 +34,7 @@ import java.net.MalformedURLException;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
+@Api(tags = "유저 피드 컨트롤러 API")
 @RestController
 @RequestMapping("/userfeed")
 @RequiredArgsConstructor
