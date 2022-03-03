@@ -1,13 +1,5 @@
 package com.ssafy.BackEnd.exception;
 
-import io.jsonwebtoken.JwtException;
-import javassist.NotFoundException;
-import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import org.springframework.web.HttpRequestMethodNotSupportedException;
-import org.springframework.web.bind.annotation.ControllerAdvice;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-
 public class CustomException extends RuntimeException {
 
     private ErrorCode errorCode;

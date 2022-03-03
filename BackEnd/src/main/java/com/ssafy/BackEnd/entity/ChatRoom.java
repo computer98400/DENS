@@ -1,7 +1,6 @@
 package com.ssafy.BackEnd.entity;
 
 import com.ssafy.BackEnd.dto.ChatUserDto;
-import com.ssafy.BackEnd.dto.UserDto;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.redis.core.RedisHash;

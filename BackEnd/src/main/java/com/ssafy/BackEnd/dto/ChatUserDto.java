@@ -1,11 +1,8 @@
 package com.ssafy.BackEnd.dto;
 
-import com.ssafy.BackEnd.entity.User;
-import com.ssafy.BackEnd.entity.UserIdentity;
 import lombok.Builder;
 import lombok.Getter;
 
-import java.time.LocalDateTime;
 
 @Getter
 public class ChatUserDto {
