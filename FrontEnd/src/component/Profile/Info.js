@@ -15,7 +15,7 @@ export default function ProfileInfo({
   useEffect(() => {}, [idCheck])
   return (
     <>
-      <div class="card mb-3">
+      <div className="card mb-3">
         <div className="card-body">
           <div className="row">
             <div className="col-sm-3">

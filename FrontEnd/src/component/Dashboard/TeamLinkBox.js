@@ -6,25 +6,13 @@ export default function TeamLinkBox(props) {
     // user가 URL에 직접 쳐서 들어간다면?
     // 1. Path
     //    URL/JWT로부터 가져와야
-    
-    
-    
     return (
         <Box>
-            <Link to={{
-                pathname:`/auth/team/${props.team_id}`,                
-            }}
-            state={{
-                team_id: props.team_id,
-            }}
-            class="text-decoration-none"
-            style={{ fontFamily: 'Cafe24SsurroundAir'}}
-            >
+            <Link to={{pathname:`/auth/team/${props.team_id}`,}} state={{team_id: props.team_id}} className="text-decoration-none" style={{ fontFamily: 'Cafe24SsurroundAir'}}>
                 <img src={require('./computer.PNG')} width={80} height={80}></img>
                 <div>
                     <Title>{props.title}</Title> 
                 </div>
-            
             </Link>
         </Box>
     )

@@ -28,7 +28,6 @@ export default function Signup() {
           setCertiText('certi', response.data);
         },
             (error) => {
-                console.log("verify test 43444444");
                 console.log(error)
             });
         navigate(`/signin`);

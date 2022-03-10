@@ -16,7 +16,6 @@ function Login() {
   const [token, setToken] = useCookies(['token'])
   const [profileid, setProfileid] = useCookies(['myID'])
 
-  const token2 = useSelector((state) => state)
   let navigate = useNavigate()
 
   const [input, setInput] = useState({
@@ -33,12 +32,10 @@ function Login() {
   }
 
   const LoginConsole = () => {
-    console.log(input);
     signin(input, (response) => {
-     console.log(response.data);
       dispatch(loginUser(response.data));
       dispatch(getId());
-      console.log(store.getState().user.token);
+      // console.log(store.getState().user.token);
       if (store.getState().user.profileid == -1) {
         return navigate(`/asdfsasfsafsfd`)
       }

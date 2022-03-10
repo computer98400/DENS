@@ -2,9 +2,6 @@ import { apiInstance } from './index.js';
 
 const api = apiInstance();
 //localhost:8080/test22 -> 를 가져오고싶다.
-function test22(param, success, fail) {
-    api.get(`/test22`,param).then(success).catch(fail);
-}
 function password(param, success, fail) {
   api.get(`/password`).then(success).catch(fail)
 }
@@ -17,9 +14,6 @@ function signup(param, success, fail) {
 
 function signin(param, success, fail) {
   api.post(`/signin`,param).then(success).catch(fail);
-}
-function login(param, success, fail) {
-    api.post(`/signin`,JSON.stringify(param)).then(success).catch(fail);
 }
 
 function profileTest(param, success, fail) {
@@ -61,9 +55,7 @@ function dummytest3(param, success, fail) {
 
 
 export {
-  test22,
   signup,
-  login,
   dummytest,
   dummytest2,
   dummytest3,
