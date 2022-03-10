@@ -72,7 +72,7 @@ export default function Search() {
                     <TeamList teamlist={ teamList}/>
                     <UserList userlist={userList} />
                 </Slider>
-                : <AllList data={totalList} />
+                : ''
             }
         </Container>
         )
