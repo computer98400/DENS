@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import { store } from '../..'
 import { makeMyTeam } from '../../api/team'
 import '../../css/font.css'
-
+import { useStore } from 'react-redux'
 export default function CreateTeam() {
+  const store = useStore();
   const [teamName, setTeamName] = useState('')
   const [teamInfo, setTeamInfo] = useState('')
 

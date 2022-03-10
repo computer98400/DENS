@@ -1,4 +1,3 @@
-import { store } from '../..'
 import { API_BASE_URL } from '../../config'
 import React, { useState, useEffect } from 'react'
 import { Outlet, useParams } from 'react-router-dom'
@@ -10,12 +9,13 @@ import Keyword from './Keyword'
 import axios from 'axios'
 import { useCookies } from 'react-cookie'
 import '../../css/profile.css'
-
+import { useStore } from 'react-redux'
 export default function ProfileMain() {
+  const store = useStore();
   const [inputs, setInputs] = useState({
     name: '',
     position: '',
-    stack: '  ',
+    stack: ' ',
     email: '',
     keyword: '',
     edit: false,
@@ -61,15 +61,15 @@ export default function ProfileMain() {
   }, [position, stack])
 
   function onInputs() {
-    setInputs({
-      ...inputs,
-      name: res.data.name,
-      position: res.data.position,
-      stack: res.data.stack,
-      email: res.data.email,
-      gitId: res.data.git_id,
-      git: !git,
-    })
+    // setInputs({
+    //   ...inputs,
+    //   name: res.data.name,
+    //   position: res.data.position,
+    //   stack: res.data.stack,
+    //   email: res.data.email,
+    //   gitId: res.data.git_id,
+    //   git: !git,
+    // })
   }
 
   function onKeywordsGet() {

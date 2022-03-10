@@ -3,12 +3,12 @@ import styled, { css } from "styled-components";
 import Slider from "react-slick";
 import TeamLinkBox from "./TeamLinkBox";
 import { myteam } from '../../api/team';
-import { store } from "../..";
 import axios from 'axios';
 import { API_BASE_URL } from '../../config';
+import { useStore } from 'react-redux';
 
 function TeamLink() {
-
+  const store = useStore();
     const profileId = store.getState().user.profileid;
     
     const token = store.getState().user.token;

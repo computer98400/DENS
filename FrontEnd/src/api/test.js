@@ -5,11 +5,19 @@ const api = apiInstance();
 function test22(param, success, fail) {
     api.get(`/test22`,param).then(success).catch(fail);
 }
-
+function password(param, success, fail) {
+  api.get(`/password`).then(success).catch(fail)
+}
+function certiPWD(param, success, fail) {
+  api.get(`/certiPWD`).then(success).catch(fail)
+}
 function signup(param, success, fail) {
     api.post(`/signup`,param).then(success).catch(fail);
 }
 
+function signin(param, success, fail) {
+  api.post(`/signin`,param).then(success).catch(fail);
+}
 function login(param, success, fail) {
     api.post(`/signin`,JSON.stringify(param)).then(success).catch(fail);
 }
@@ -31,6 +39,18 @@ function dummytest2(param, success, fail) {
     .then(success)
     .catch(fail)
 }
+function verify(param, success, fail) {
+  api
+    .get(`/search/user`, { params: { keyword: param } })
+    .then(success)
+    .catch(fail)
+}
+function verify22(param, success, fail) {
+  api
+    .get(`/search/user`, { params: { keyword: param } })
+    .then(success)
+    .catch(fail)
+}
 function dummytest3(param, success, fail) {
   console.log('check team' + param)
   api
@@ -38,6 +58,7 @@ function dummytest3(param, success, fail) {
     .then(success)
     .catch(fail)
 }
+
 
 export {
   test22,
@@ -48,4 +69,9 @@ export {
   dummytest3,
   profileTest,
   profileUpdate,
+  password,
+  certiPWD,
+  signin,
+  verify,
+  verify22
 }

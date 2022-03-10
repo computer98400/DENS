@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Image } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { store } from '../..'
 import { Navbar } from 'react-bootstrap'
-
+import { useStore } from 'react-redux'
 export default function Head() {
   const [drop, setDrop] = useState(false)
+  const store = useStore();
   const userId = store.getState().user.profileid
   const clickCheck = () => {
     setDrop(!drop)

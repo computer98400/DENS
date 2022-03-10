@@ -2,15 +2,16 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector, useStore } from 'react-redux'
 import { getId, getTOKEN, loginUser } from '../../redux/userreduce'
-import { store } from '../..'
+
 import { useCookies } from 'react-cookie'
 import { signin, signup, test11 } from '../../api/test'
 import axios from 'axios'
 import { apiInstance } from '../../api'
 
 function Login() {
+  const store = useStore();
   const dispatch = useDispatch()
   const [token, setToken] = useCookies(['token'])
   const [profileid, setProfileid] = useCookies(['myID'])
@@ -36,8 +37,8 @@ function Login() {
     signin(input, (response) => {
      console.log(response.data);
       dispatch(loginUser(response.data));
-      // dispatch(getId());
-      // console.log(store.getState().user.token);
+      dispatch(getId());
+      console.log(store.getState().user.token);
       if (store.getState().user.profileid == -1) {
         return navigate(`/asdfsasfsafsfd`)
       }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Image } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
-import { store } from '../..'
+import {useStore} from 'react-redux'
 export default function ProfileImage({
   id,
   fileImage,
@@ -10,6 +10,7 @@ export default function ProfileImage({
   onLoad,
   onImageUpload,
 }) {
+  const store = useStore();
   const [image, setImage] = useState('')
   const nav = useNavigate()
   const userId = store.getState().user.profileid

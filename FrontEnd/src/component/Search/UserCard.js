@@ -7,8 +7,9 @@ import { Link, useNavigate } from 'react-router-dom'
 import dd from './dd.png'
 import axios from 'axios'
 import { useCookies } from 'react-cookie'
-import { store } from '../..'
-export default function UserCard(props){
+import { useStore } from 'react-redux'
+export default function UserCard(props) {
+  const store = useStore();
     const check = () => {
         props.click(props.check, props.data.name, props.data.email)
         //searchprofileID(props.check,(response) => {console.log(response.data)}, (error)=> {console.log(error)});

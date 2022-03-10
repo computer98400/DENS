@@ -2,15 +2,14 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { teamFeed, deleteTeamFeed ,downloadFeedFile } from "../../api/team";
 import { useParams } from 'react-router-dom';
-import { store } from "../..";
 import FeedEditModal from "./FeedEditModal";
-
+import { useStore } from 'react-redux';
 export default function TeamFeedIndex() {
-
+	const store = useStore();
 	const teamId = useParams().id;
 	const [feedIndex, setFeedIndex] = useState([]);
-	const profileId = store.getState().user.profileid;
-
+	// const profileId = store.getState().user.profileid;
+	const profileId = store.getState().user.profileId;
   // 피드 정보 가져오기
 	// 피드 이미지 출력
 	const [feedBase64, setFeedBase64] = useState([])
