@@ -1,16 +1,10 @@
 package com.ssafy.BackEnd.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.databind.ser.Serializers;
 import lombok.*;
-import org.springframework.data.annotation.CreatedDate;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -19,7 +13,6 @@ import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 import java.util.List;
 
 
@@ -41,29 +34,14 @@ public class User implements UserDetails {
 
     private LocalDateTime createDate;
 
-//    @Column(name = "identity")
-//    @Enumerated(EnumType.STRING)
-    //@ElementCollection(fetch = FetchType.EAGER)
-    //@Builder.Default
     @Enumerated(EnumType.STRING)
     private UserIdentity identity;
 
-//    @ElementCollection(fetch = FetchType.EAGER)
-//    @Builder.Default
-//    private List<String> roles = new ArrayList<>();
-    //private List<UserIdentity> identity = new ArrayList<>();
-
-//    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-//    @JoinColumn(name = "salt_id")
-//    private Salt salt;
-
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "profile_id")
-    //@JsonIgnore
     private Profile profile;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    //@JsonIgnore
     private List<TeamMember> team_member = new ArrayList<>( );
 
     @Builder
@@ -93,16 +71,6 @@ public class User implements UserDetails {
         }
 
         return authorities;
-//            Collection<UserIdentity> userIdentities) {
-//            List<GrantedAuthority> authorities = new ArrayList<>();
-//
-//            for(UserIdentity identity : userIdentities){
-//                authorities.add(new SimpleGrantedAuthority(identity.name()));
-//                identity.
-//            }
-//        return this.identity.stream()
-//                .map(SimpleGrantedAuthority::new)
-//                .collect(UserIdentity);
     }
 
     @Override

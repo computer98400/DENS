@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import Button from './Button';
 import React, { useState, useEffect } from "react";
-import { store } from "../..";
 import { editTeamFeed } from "../../api/team";
+import { useStore } from 'react-redux';
 
 
 const FeedEditModal = ({
@@ -16,6 +16,7 @@ const FeedEditModal = ({
   teamId,
   editFeedId
 }) => {
+  const store = useStore();
   const [childContent, setChildContent] = useState('');
   let [editImg, setEditImg] = useState();
   let [editFile, setEditFile] = useState();

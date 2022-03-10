@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import styled from 'styled-components';
-import Searchbigbox from './Searchbigbox';
+// import Searchbigbox from './Searchbigbox';
 import dummy from '../../db/data.json';
 import TeamList from './TeamList';
 import UserList from './UserList';
-import AllList from './AllList';
+// import AllList from './AllList';
 import Slider from 'react-slick';
 import { searchTeamkeyword, searchUserkeyword } from '../../api/search';
 
@@ -72,7 +72,7 @@ export default function Search() {
                     <TeamList teamlist={ teamList}/>
                     <UserList userlist={userList} />
                 </Slider>
-                : <AllList data={totalList} />
+                : ''
             }
         </Container>
         )

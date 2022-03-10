@@ -1,9 +1,7 @@
 package com.ssafy.BackEnd.repository;
 
 
-import com.ssafy.BackEnd.entity.ProfileKeyword;
 import com.ssafy.BackEnd.entity.Team;
-import com.ssafy.BackEnd.entity.TeamFeedKeyword;
 import com.ssafy.BackEnd.entity.TeamKeyword;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

@@ -4,12 +4,11 @@ import { myteam } from '../../api/team';
 import TeamLinkBox from '../Dashboard/TeamLinkBox';
 import { Outlet, Link, useNavigate } from 'react-router-dom';
 import { API_BASE_URL } from '../../config';
-import { useSelector } from 'react-redux';
+import { useStore } from 'react-redux';
 import axios from 'axios';
-import { store } from '../..';
-
 export default function TeamIndex() {
   const [index, setIndex] = useState('');
+  const store = useStore();
   const token =  store.getState().user.token;
   const profileid = store.getState().user.profileid;
   // 팀 불러오기

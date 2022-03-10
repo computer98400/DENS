@@ -2,7 +2,6 @@ package com.ssafy.BackEnd.persistence.redis;
 
 import com.ssafy.BackEnd.dto.ChatDTO;
 import com.ssafy.BackEnd.util.CmmUtil;
-import net.bytebuddy.dynamic.scaffold.MethodGraph;
 import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;

@@ -1,7 +1,6 @@
 package com.ssafy.BackEnd.config;
 
-import com.ssafy.BackEnd.service.JwtServiceImpl;
-import com.ssafy.BackEnd.service.JwtTokenProvider;
+import com.ssafy.BackEnd.service.jwt.JwtServiceImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.messaging.Message;

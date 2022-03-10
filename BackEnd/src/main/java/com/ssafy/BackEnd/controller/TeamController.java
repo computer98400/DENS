@@ -5,7 +5,9 @@ import com.ssafy.BackEnd.entity.*;
 import com.ssafy.BackEnd.exception.CustomException;
 import com.ssafy.BackEnd.exception.ErrorCode;
 import com.ssafy.BackEnd.repository.*;
-import com.ssafy.BackEnd.service.*;
+import com.ssafy.BackEnd.service.etc.HashTagAlgorithm;
+import com.ssafy.BackEnd.service.profile.ProfileService;
+import com.ssafy.BackEnd.service.team.TeamMemberService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import javassist.NotFoundException;
@@ -19,7 +21,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
-import com.ssafy.BackEnd.service.TeamService;
+import com.ssafy.BackEnd.service.team.TeamService;
 import com.ssafy.BackEnd.repository.TeamRepository;
 import com.ssafy.BackEnd.entity.Team;
 
@@ -47,7 +49,7 @@ public class TeamController {
     TeamKeywordRepository teamKeywordRepository;
 
     private HashTagAlgorithm hashTagAlgorithm = new HashTagAlgorithm();
-    //@ExceptionHandler({NotFoundException.class, NullPointerException.class})
+
     @GetMapping
     @ApiOperation(value = "팀 목록 가져오기")
     public ResponseEntity<List<Team>> getAllTeams() throws NotFoundException {
@@ -57,7 +59,6 @@ public class TeamController {
             logger.error("NO ALL TEAL LIST");
             System.out.println("전체 팀 목록이 없습니다");
             return new ResponseEntity<List<Team>>(teams, HttpStatus.OK);
-            //throw new CustomException(ErrorCode.NO_DATA_ERROR);
         }
         logger.info("INFO SUCCESS");
 
@@ -72,7 +73,6 @@ public class TeamController {
         if (my_teams.isEmpty()) {
             logger.error("NO MY TEAM");
             System.out.println("내 팀 목록이 없습니다");
-            //throw new CustomException(ErrorCode.NO_DATA_ERROR);
         }
         logger.info("INFO SUCCESS");
 
@@ -116,7 +116,6 @@ public class TeamController {
         if(team == null) {
              logger.error("NO TEAM INFO");
              throw new CustomException(ErrorCode.NO_DATA_ERROR);
-             //return new ResponseEntity<Team>(team, HttpStatus.OK);
          }
 
         System.out.println("team id : "+team.getTeam_id());
@@ -126,9 +125,8 @@ public class TeamController {
 
     }
 
-    //@ExceptionHandler({NotFoundException.class, NullPointerException.class})
     @PutMapping("/{profile_id}/{team_id}")
-    @ApiOperation(value = "팀 수정") //팀 수정이 무엇에 대한 수정인가(name과 content에 대한 수정??)
+    @ApiOperation(value = "팀 제목 수정")
     public ResponseEntity<Team> modifyTeam(@PathVariable long profile_id, @PathVariable long team_id, @RequestBody TeamDto teamDto) throws NotFoundException {
         Team findTeam = teamService.findByTeam(team_id);
         if (findTeam == null) {
@@ -141,7 +139,6 @@ public class TeamController {
         return new ResponseEntity<Team>(team, HttpStatus.OK);
     }
 
-    //@ExceptionHandler({NotFoundException.class, NullPointerException.class})
     @DeleteMapping("/{team_id}")
     @ApiOperation(value = "팀 삭제")
     public ResponseEntity<Void> deleteTeam(@PathVariable Long team_id) {
@@ -158,8 +155,7 @@ public class TeamController {
         if (team == null) {
             logger.error("NO TEAM PROFILE INFO");
             throw new CustomException(ErrorCode.NO_DATA_ERROR);
-        }
-        //System.out.println("팀제목" + team.getContent());
+        };
         Team newTeam = teamService.modifyTeamProfile(teamDto, team, profile_id);
         logger.info("INFO SUCCESS");
 

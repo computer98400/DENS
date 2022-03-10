@@ -1,18 +1,16 @@
-import React, { useEffect, useState } from 'react'
-import { Container, Row, Button, Stack, Image } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Button } from 'react-bootstrap'
 export default function ProfileInfo({
-  id,
   name,
   edit,
-  onSave,
   position,
   stack,
   email,
-  update,
-  onEdit,
-  gitId,
   idCheck,
+  gitId,
+  onUpdate,
+  onEdit,
+  onSave,
 }) {
   useEffect(() => {}, [idCheck])
   return (
@@ -83,7 +81,7 @@ export default function ProfileInfo({
               <div className="col-sm-12">
                 <div>
                   {edit ? (
-                    <Button onClick={update} size="sm" variant="secondary">
+                    <Button onClick={onUpdate} size="sm" variant="secondary">
                       확인
                     </Button>
                   ) : (

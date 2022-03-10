@@ -6,12 +6,12 @@ import TeamFeedContainer from './TeamFeedContainer';
 import TeamMemberInfo from './TeamMemberInfo'
 import MembersImg from './MembersImg';
 // import {  } from "react-router-dom";
-import { store } from '../..';
 import { API_BASE_URL } from '../../config';
 import axios from 'axios';
-import { useSelector } from 'react-redux';
+import { useStore, useSelector } from 'react-redux';
 
 export default function TeamDetail(props) {
+	const store = useStore();
 	let navigate = useNavigate();
     const [teamTitle, setTeamTitle] = useState('');
     const [teamContent, setTeamContent] = useState('');

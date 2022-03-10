@@ -3,12 +3,11 @@ import axios from 'axios';
 import { titleChange, teamBreakup, detail, dischargeMembers } from '../../api/team';
 import styled from "styled-components";
 import { useNavigate, useParams } from 'react-router-dom';
-import { store } from '../..';
 import '../../css/font.css'
 import { ButtonToolbar } from 'react-bootstrap';
-
+import { useStore } from 'react-redux';
 export default function TeamSettings() {
-
+	const store = useStore();
 		      // profile_id, team_id 불러오기 필요
 			  const myProfileId = store.getState().user.profileid;
 

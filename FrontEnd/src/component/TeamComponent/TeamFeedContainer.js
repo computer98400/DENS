@@ -5,9 +5,9 @@ import { useEffect } from "react";
 import { teamFeed, makeTeamFeed, downloadFeedFile } from "../../api/team"
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { store } from "../..";
-
+import { useStore } from 'react-redux';
 function TeamFeedContainer() {
+  const store = useStore();
   const profileId = store.getState().user.profileid;
   const teamId = useParams().id;
   

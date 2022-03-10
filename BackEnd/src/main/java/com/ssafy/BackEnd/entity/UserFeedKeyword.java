@@ -19,10 +19,6 @@ public class UserFeedKeyword {
 
     String name;
 
-//    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
-//    @JoinColumn(name = "keyword_id")
-//    Keyword keyword;
-
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "userfeed_id")
     UserFeed user_feed;

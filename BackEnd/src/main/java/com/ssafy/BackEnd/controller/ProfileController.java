@@ -9,11 +9,10 @@ import com.ssafy.BackEnd.entity.TeamKeyword;
 import com.ssafy.BackEnd.exception.CustomException;
 import com.ssafy.BackEnd.exception.ErrorCode;
 import com.ssafy.BackEnd.repository.ProfileKeywordRepository;
-import com.ssafy.BackEnd.repository.ProfileRepository;
 import com.ssafy.BackEnd.repository.UserRepository;
-import com.ssafy.BackEnd.service.HashTagAlgorithm;
-import com.ssafy.BackEnd.service.ImageService;
-import com.ssafy.BackEnd.service.ProfileService;
+import com.ssafy.BackEnd.service.etc.HashTagAlgorithm;
+import com.ssafy.BackEnd.service.profile.ImageService;
+import com.ssafy.BackEnd.service.profile.ProfileService;
 import com.ssafy.BackEnd.util.MediaUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -31,7 +30,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.annotation.Resource;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -77,7 +75,6 @@ public class ProfileController {
             }
             else {
                 throw new CustomException(ErrorCode.NO_DATA_ERROR);
-                //return new ResponseEntity<Profile>((Profile) null, HttpStatus.NOT_FOUND);
             }
 
         } catch (Exception e) {
@@ -98,16 +95,15 @@ public class ProfileController {
         } catch (Exception e) {
             log.info(e.toString());
             throw new CustomException(ErrorCode.NO_DATA_ERROR);
-            //return new ResponseEntity<Profile>((Profile) null, HttpStatus.NOT_FOUND);
         }
     }
 
     @PostMapping(value = "/update/image/{profile_id}")
+    @ApiOperation(value = "유저 프로필 이미지 업데이트")
     public ResponseEntity<String> updateImage(@PathVariable Long profile_id, @RequestPart MultipartFile file) throws NotFoundException {
         String imagePath = imageService.update(profile_id, file);
         if (imagePath == null) {
             logger.info("NO IMAGE PATH");
-            //throw new CustomException(ErrorCode.NO_DATA_ERROR);
         }
         logger.info("INFO SUCCESS");
 
@@ -115,6 +111,7 @@ public class ProfileController {
     }
 
     @GetMapping(value = "/image/{profile_id}")
+    @ApiOperation(value = "유저 프로필 이미지 보이기")
     public ResponseEntity<byte[]> displayImage(@PathVariable Long profile_id) throws Exception {
 
         InputStream in = null;
@@ -146,6 +143,7 @@ public class ProfileController {
     }
 
     @DeleteMapping("/{profile_id}")
+    @ApiOperation(value = "유저 삭제")
     public void deleteUser(@PathVariable Long profile_id) throws NotFoundException {
         Optional<Profile> findProfile = profileService.findById(profile_id);
         if (findProfile == null) {
@@ -156,6 +154,7 @@ public class ProfileController {
     }
 
     @PostMapping("/keyword/{profile_id}")
+    @ApiOperation(value = "유저 프로필 키워드 추가")
     public ResponseEntity<List<ProfileKeyword>> addKeyword(@PathVariable Long profile_id, @RequestParam String content) throws NotFoundException {
         Profile profile = profileService.findById(profile_id).get();
         if (profile == null) {
@@ -182,6 +181,7 @@ public class ProfileController {
     }
 
     @GetMapping("/keyword/{profile_id}")
+    @ApiOperation(value = "유저 프로필 키워드 가져오기")
     public List<ProfileKeyword> getKeywords(@PathVariable Long profile_id) throws NotFoundException {
         Profile profile = profileService.findById(profile_id).get();
         if (profile == null) {

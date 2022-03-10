@@ -3,7 +3,6 @@ import React, { useEffect } from 'react'
 import { useCookies } from 'react-cookie'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, Outlet } from 'react-router-dom'
-import { store } from '../..'
 import { apiInstance } from '../../api'
 import { getMember, test11 } from '../../api/test'
 import { API_BASE_URL } from '../../config'
@@ -13,7 +12,7 @@ import {
   loginUser,
   sessionCheck,
 } from '../../redux/userreduce'
-import Header from './HeaderBox'
+// import Header from './HeaderBox'
 import Sidebar from './Sidebar'
 import Head from './Head'
 import { Container, Navbar } from 'react-bootstrap'

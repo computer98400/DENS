@@ -1,19 +1,9 @@
 import React from 'react'
-import { TagCloud } from 'react-tagcloud'
-import {
-  Container,
-  Row,
-  Button,
-  Stack,
-  Image,
-  InputGroup,
-  FormControl,
-} from 'react-bootstrap'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-export default function ProfileKeyword({ keyword, onSave, putKeywords }) {
-  function enterKey(e) {
+import { Stack, InputGroup, FormControl } from 'react-bootstrap'
+export default function ProfileKeyword({ keyword, onSave, onKeywords }) {
+  function onCheck(e) {
     if (e.key === 'Enter') {
-      putKeywords()
+      onKeywords()
     }
   }
   return (
@@ -27,7 +17,7 @@ export default function ProfileKeyword({ keyword, onSave, putKeywords }) {
               placeholder="키워드를 입력해주세요."
               value={keyword}
               onChange={onSave}
-              onKeyUp={enterKey}
+              onKeyUp={onCheck}
             />
           </InputGroup>
         </Stack>

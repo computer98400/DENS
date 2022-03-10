@@ -5,8 +5,7 @@ import Signin from './component/BeforePage/Signin'
 import Signup from './component/BeforePage/Signup'
 import Password from './component/BeforePage/Password'
 
-import BeforeLogin from './component/Default/BeforeLogin'
-import Firstpage from './component/BeforePage/Outerpage'
+// import Outerpage from './component/BeforePage/Outerpage'
 import Back from './component/Default/Innerpage'
 
 import TeamDetail from './component/TeamComponent/TeamDetail'
@@ -18,25 +17,21 @@ import TeamMain from './component/TeamComponent/TeamMain'
 import Dashboard from './component/Dashboard/Main'
 
 import Search from './component/Search/Main'
-import Searchid from './component/Search/Searchid'
 
 import ProfileInfo from './component/Profile/Info'
 import ProfileKeyword from './component/Profile/Keyword'
 import ProfileMain from './component/Profile/Main'
 
-import Group from './component/GroupComponent/Group'
-import Groupstart from './component/GroupComponent/Groupstart'
-import Groupchannel from './component/GroupComponent/Groupchannel'
-import Grouplink from './component/GroupComponent/Grouplink'
 
 import Messenger from './component/Messenger/List'
 
 import Error from './component/Error'
 
-import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap/dist/css/bootstrap.min.css'
 import MessageRoom from './component/Messenger/Room'
 import CertiSubmit from './component/CertiSubmit'
 import CertiPassword from './component/BeforePage/Passwordupdate'
+import Outerpage from './component/BeforePage/Outerpage'
 // import auth from './component/hoc/auth'
 const App = () => {
   const routes = useRoutes([
@@ -44,7 +39,7 @@ const App = () => {
     //이전엔 상단하단에 페이지만 표시된다.
     {
       path: '/',
-      element: <Firstpage />,
+      element: <Outerpage />,
       children: [
         // { index: true, element: <Firstpage /> },
         { index: true, element: <Signin /> },
@@ -88,17 +83,7 @@ const App = () => {
           element: <Search />,
           children: [
             { index: true, element: <Search /> },
-            { path: '/auth/search/:teamid', element: <Searchid /> },
-          ],
-        },
-        {
-          path: '/auth/group',
-          element: <Group />,
-          children: [
-            { index: true, element: <Group /> },
-            { path: '/auth/group/start', element: <Groupstart /> },
-            { path: '/auth/group/channel', element: <Groupchannel /> },
-            { path: '/auth/group/link', element: <Grouplink /> },
+            // { path: '/auth/search/:teamid', element: <Searchid /> },
           ],
         },
         {

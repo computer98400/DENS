@@ -3,10 +3,11 @@ import React, { useState } from 'react'
 import { Cookies, useCookies } from 'react-cookie'
 import { useNavigate, Link } from 'react-router-dom'
 import { API_BASE_URL } from '../../config'
-import { store } from '../..'
 import { useEffect } from 'react'
+import { useStore } from 'react-redux'
 import styled from 'styled-components'
 export default function MessangerCard({ data }) {
+  const store = useStore();
   const singleData = data
   const cookie = useCookies(['token'])
   const [talkingLog, setTalkingLog] = useState([])

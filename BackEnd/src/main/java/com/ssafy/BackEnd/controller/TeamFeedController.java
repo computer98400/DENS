@@ -2,24 +2,22 @@ package com.ssafy.BackEnd.controller;
 
 import com.ssafy.BackEnd.dto.TeamFeedAddForm;
 import com.ssafy.BackEnd.dto.TeamFeedDto;
-import com.ssafy.BackEnd.dto.UserFeedDto;
 import com.ssafy.BackEnd.entity.*;
 import com.ssafy.BackEnd.exception.CustomException;
 import com.ssafy.BackEnd.exception.ErrorCode;
 import com.ssafy.BackEnd.repository.ProfileRepository;
 import com.ssafy.BackEnd.repository.TeamFeedRepository;
-import com.ssafy.BackEnd.service.FileStore;
-import com.ssafy.BackEnd.service.TeamFeedFileServiceImpl;
-import com.ssafy.BackEnd.service.TeamFeedService;
-import com.ssafy.BackEnd.service.TeamService;
-import com.ssafy.BackEnd.util.UserFeedAddForm;
+import com.ssafy.BackEnd.service.file.FileStore;
+import com.ssafy.BackEnd.service.team.TeamFeedFileServiceImpl;
+import com.ssafy.BackEnd.service.team.TeamFeedService;
+import com.ssafy.BackEnd.service.team.TeamService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import javassist.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.core.config.plugins.validation.constraints.Required;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -27,10 +25,7 @@ import org.springframework.http.ContentDisposition;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.parameters.P;
-import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -41,18 +36,17 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.util.UriUtils;
 
 
+@Api(tags = "팀 피드 컨트롤러")
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/teamfeed")
 @Slf4j
+
 public class TeamFeedController {
     private static final Logger logger = LogManager.getLogger(TeamFeedController.class);
 
@@ -97,6 +91,7 @@ public class TeamFeedController {
         return new ResponseEntity<List<TeamFeed>>(teamfeeds, HttpStatus.OK);
     }
 
+    @ApiOperation(value = "팀 피드 불러오기")
     @GetMapping("/ourteamfeed/{team_id}")
     public ResponseEntity<List<TeamFeed>> findOurTeamFeed(@PathVariable long team_id) {
         List<TeamFeed> our_teamfeeds = teamFeedService.showOurTeamFeedList(team_id);
@@ -138,6 +133,7 @@ public class TeamFeedController {
 
     @ResponseBody
     @GetMapping("/images/{filename}")
+    @ApiOperation(value = "이미지 가져오기")
     public UrlResource processImg(@PathVariable String filename) throws MalformedURLException {
 
         logger.info("INFO SUCCESS");
@@ -145,6 +141,7 @@ public class TeamFeedController {
     }
 
     @GetMapping("/files/{filename}")
+    @ApiOperation(value = "파일 가져오기")
     public ResponseEntity<UrlResource> processFiles(@PathVariable String filename, @RequestParam String originName) throws MalformedURLException {
         UrlResource urlResource = new UrlResource("file:" + fileStore.createPath(filename, FileType.GENERAL));
         String encodedUploadFileName = UriUtils.encode(originName, StandardCharsets.UTF_8);
@@ -157,12 +154,14 @@ public class TeamFeedController {
     }
 
     @DeleteMapping("/files/{filename}")
+    @ApiOperation(value = "파일 삭제하기")
     public void deleteFiles(@PathVariable String filename) {
         teamFeedFileService.deleteFile(filename);
         logger.info("INFO SUCCESS");
     }
 
     @GetMapping("/download/{filename}")
+    @ApiOperation(value = "파일 다운로드 하기")
     public ResponseEntity<Resource> download(@PathVariable String filename) throws IOException {
         Path path = Paths.get("/home/ubuntu/files/generals/" + filename);
         String contentType = Files.probeContentType(path);

@@ -2,11 +2,12 @@
 import axios from 'axios';
 import React, { Component, useEffect, useState } from "react";
 import styled, { css } from "styled-components";
-import { store } from '../..';
 import { API_BASE_URL } from '../../config';
 import { Link} from 'react-router-dom'
+import { useStore } from 'react-redux';
 
 function Message(props) {
+  const store = useStore();
   const profileId = store.getState().user.profileid;
   const token = store.getState().user.token;
   const [data, setData] = useState(null);

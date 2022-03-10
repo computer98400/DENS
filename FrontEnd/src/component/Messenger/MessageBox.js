@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { store } from '../..'
 import styled from 'styled-components'
 
 export default function MessageBox(props) {

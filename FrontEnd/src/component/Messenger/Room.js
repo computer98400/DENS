@@ -7,12 +7,13 @@ import * as StompJs from '@stomp/stompjs'
 import SockJS from 'sockjs-client'
 import MessageBox from './MessageBox'
 import styled from 'styled-components'
-import { store } from '../..'
 import axios from 'axios'
 import TeamInviteModal from './Invite'
+import { useStore } from 'react-redux'
 
 export default function MessageRoom() {
   // const yourId = useLocation().state.yourId
+  const store = useStore();
   const yourId = useLocation().state;
   console.log(yourId)
 

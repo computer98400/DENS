@@ -2,27 +2,26 @@ package com.ssafy.BackEnd.controller;
 
 import com.ssafy.BackEnd.entity.Profile;
 import com.ssafy.BackEnd.entity.Team;
-import com.ssafy.BackEnd.entity.User;
 import com.ssafy.BackEnd.exception.CustomException;
 import com.ssafy.BackEnd.exception.ErrorCode;
-import com.ssafy.BackEnd.service.ProfileService;
-import com.ssafy.BackEnd.service.TeamService;
-import com.ssafy.BackEnd.service.UserService;
+import com.ssafy.BackEnd.service.profile.ProfileService;
+import com.ssafy.BackEnd.service.team.TeamService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import javassist.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 @RequestMapping("/search")
 @RequiredArgsConstructor
+@Api(tags = "검색 컨트롤러 API")
 public class SearchController {
     private static final Logger logger = LogManager.getLogger(SearchController.class);
 
@@ -30,25 +29,25 @@ public class SearchController {
     private final TeamService teamService;
 
     @GetMapping("/user")
-    public ResponseEntity<List<Profile>> findSearchedUsers(String keyword) throws NotFoundException{
+    @ApiOperation(value = "유저이름으로 유저 검색")
+    public ResponseEntity<List<Profile>> findSearchedUsers(String keyword) throws NotFoundException {
         HttpStatus status;
         List<Profile> userList = profileService.showFindUserList(keyword);
-        System.out.println("전달 받은 값 : "+keyword);
-        if(userList != null) {
+        System.out.println("전달 받은 값 : " + keyword);
+        if (userList != null) {
             status = HttpStatus.OK;
-            System.out.println("success\n"+userList.get(0).getName());
+            System.out.println("success\n" + userList.get(0).getName());
             logger.info("INFO SUCCESS");
         } else {
             status = HttpStatus.NO_CONTENT;
             System.out.println("no searched userlist");
-            logger.info("SEARCHED NULL");
-            //throw new CustomException("no searched userlist", ErrorCode.NO_DATA_ERROR);
+            logger.info("NO SEARCHED USERLIST");
         }
-
-        return new ResponseEntity<>(userList, status);
+            return new ResponseEntity<>(userList, status);
     }
 
     @GetMapping("/user/{profile_id}")
+    @ApiOperation(value = "프로필 아이디로 프로필 반환")
     public ResponseEntity<Profile> findSearchOneProfile(@PathVariable Long profile_id) throws NotFoundException {
         Profile profile = profileService.findById(profile_id).get();
         if(profile == null)
@@ -62,6 +61,7 @@ public class SearchController {
     }
 
     @GetMapping("/team/{team_id}")
+    @ApiOperation(value = "팀 아이디로 팀 반환")
     public ResponseEntity<Team> findSearchOneTeam(@PathVariable Long team_id) throws NotFoundException {
         Team team = teamService.findByTeam(team_id);
         if(team == null){
@@ -73,6 +73,7 @@ public class SearchController {
     }
 
     @GetMapping("/team")
+    @ApiOperation(value = "팀 이름으로 팀 검색")
     public ResponseEntity<List<Team>> findSearchedTeams(@RequestParam String keyword) throws NotFoundException{
         HttpStatus status;
         List<Team> teamList = teamService.showFindTeamList(keyword);
@@ -92,6 +93,7 @@ public class SearchController {
     }
 
     @GetMapping("/keyword/user")
+    @ApiOperation(value = "키워드로 유저 검색")
     public ResponseEntity<List<Profile>> findSearchedUserByKeyword(@RequestParam String keyword) {
         List<Profile> searchedUsers = profileService.findUserByKeyword(keyword);
         if (searchedUsers.isEmpty()) {
@@ -104,6 +106,7 @@ public class SearchController {
     }
 
     @GetMapping("/keyword/team")
+    @ApiOperation(value = "키워드로 팀 검색")
     public ResponseEntity<List<Team>> findSearchedTeamByKeyword(@RequestParam String keyword) {
         List<Team> searchedTeams = teamService.findTeamByKeyword(keyword);
         if (searchedTeams == null) {
