@@ -44,8 +44,8 @@ export default function TeamIndex() {
 
   return (
     <div>
-      <div class="d-flex justify-content-center m-3">
-        <button class="btn" style={{ color:'white', fontFamily: 'Cafe24SsurroundAir', backgroundColor: '#f46a72'}} onClick={goMakeTeam}>팀 생성하기</button>
+      <div className="d-flex justify-content-center m-3">
+        <button className="btn" style={{ color:'white', fontFamily: 'Cafe24SsurroundAir', backgroundColor: '#f46a72'}} onClick={goMakeTeam}>팀 생성하기</button>
       </div>
       <div>
         {index ? index.map((el, key) => {

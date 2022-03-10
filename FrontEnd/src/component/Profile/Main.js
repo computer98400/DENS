@@ -159,8 +159,8 @@ export default function ProfileMain() {
     <div>
       <div className="container">
         <div className="main-body">
-          <div class="row gutters-sm">
-            <div class="col-md-4 mb-3">
+          <div className="row gutters-sm">
+            <div className="col-md-4 mb-3">
               <Image
                 id={id}
                 fileImage={fileImage}

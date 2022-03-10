@@ -8,8 +8,8 @@ export default function ProfileTagCloud({ keywords }) {
   }
   return (
     <>
-      <div class="card mb-3">
-        <div class="card-body">
+      <div className="card mb-3">
+        <div className="card-body">
           <TagCloud
             minSize={10}
             maxSize={40}

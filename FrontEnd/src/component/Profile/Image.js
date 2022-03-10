@@ -88,7 +88,7 @@ export default function ProfileImage({
                   ></input>
                   {!fileImage && (
                     <label
-                      class="btn btn-outline-primary"
+                    className="btn btn-outline-primary"
                       name="ImgBtn"
                       htmlFor="imgInput"
                     >
@@ -98,7 +98,7 @@ export default function ProfileImage({
                 </div>
                 {fileImage && (
                   <button
-                    class="btn btn-primary"
+                  className="btn btn-primary"
                     onClick={onImageUpload}
                     size="sm"
                   >

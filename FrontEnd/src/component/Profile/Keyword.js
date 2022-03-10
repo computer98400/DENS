@@ -7,8 +7,8 @@ export default function ProfileKeyword({ keyword, onSave, onKeywords }) {
     }
   }
   return (
-    <div class="card mb-3">
-      <div class="card-body">
+    <div className="card mb-3">
+      <div className="card-body">
         <Stack direction="horizontal" gap={3}>
           <InputGroup>
             <InputGroup.Text id="basic-addon1">#</InputGroup.Text>
