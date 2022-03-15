@@ -7,9 +7,10 @@ import TeamListBox from "./TeamListBox";
 import { team } from '../../api/team';
 import axios from 'axios';
 import { API_BASE_URL } from '../../config';
-import { useSelector } from 'react-redux';
+import { useStore } from 'react-redux';
 
 export default function TeamList() {
+    const store = useStore();
     const settings = {
         dots: true,
         infinite: false,
@@ -19,7 +20,9 @@ export default function TeamList() {
     };
 
     const [info, setInfo] = useState([]);
-    const token = useSelector(state => state.user.token);
+    const user = store.getState();
+    const token = user.user.token;
+    console.log(user.user.token)
     const test = localStorage.getItem("recent");
     const authAxios = axios.create({
         baseURL: API_BASE_URL,

@@ -51,7 +51,7 @@ export default function UserList(props) {
                 <>
                     {modalppen ? <Modal open={modalppen} close={closeModal} id={modalID}  profile_keyword={modalprofilekeyword} content={modalcontent} header={modaltitle}>{modaltitle}</Modal> : ``}
                 </>
-                    {temp.map((data) => {return <UserCard  click={openModal} check= {data.profile_id} data={data}/>}) }
+                {temp.map((data, index) => { return <UserCard key={ index}  click={openModal} check= {data.profile_id} data={data}/>}) }
             </SearchBigBox>
         </ContainerT>
     )

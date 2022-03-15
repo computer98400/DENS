@@ -7,7 +7,9 @@ export default function TeamCard(props){
     //console.log(props.check);
     const check = () => {
         props.click(props.data.team_id,props.data.title,props.data.content);
-        searchTeamID(props.check,(response) => {console.log(response.data)}, (error)=> {console.log(error)});
+        searchTeamID(props.check, (response) => { console.log(response.data) }, (error) => {
+            console.log(error)
+        });
     }
 
     return(

@@ -50,7 +50,7 @@ export default function TeamList( props) {
             <>
             </>
             {
-                    temp.map((data) => { return <TeamCard click={ openModal} check={data.team_id} data= {data}/>})
+                    temp.map((data,index) => { return <TeamCard key={index }click={ openModal} check={data.team_id} data= {data}/>})
             }
         </SearchBigBox>
         </ContainerT>
@@ -61,7 +61,7 @@ const ContainerT = styled.div`
 display : flex;
 flex-direction : column;
 align-items: center;
-height: 100vh;
+height: 80vh;
 `
 const SectionName = styled.h3`
 font-family : 'Cafe24Ssurround';

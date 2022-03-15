@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import { useDispatch, useSelector, useStore } from 'react-redux'
+import { useDispatch, useStore } from 'react-redux'
 import { getId, getTOKEN, loginUser } from '../../redux/userreduce'
 
 import { useCookies } from 'react-cookie'

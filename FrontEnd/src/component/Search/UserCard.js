@@ -28,18 +28,18 @@ export default function UserCard(props) {
         },
       })
       useEffect(() => {
-        authAxios
-          .get(`/profile/image/${props.data.profile_id}`, {
-            responseType: 'blob',
-          })
-          .then((res) => {
-            const url = window.URL.createObjectURL(
-              new Blob([res.data], { type: res.headers['content-type'] })
-            )
-            console.log(url)
-            setImage(url)
-          })
-          .catch((error) => console.log(error))
+        // authAxios
+        //   .get(`/profile/image/${props.data.profile_id}`, {
+        //     responseType: 'blob',
+        //   })
+        //   .then((res) => {
+        //     const url = window.URL.createObjectURL(
+        //       new Blob([res.data], { type: res.headers['content-type'] })
+        //     )
+        //     console.log(url)
+        //     setImage(url)
+        //   })
+        //   .catch((error) => console.log(error))
       }, [])
     return(
         <TeamCarddg onClick={check}>

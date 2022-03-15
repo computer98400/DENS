@@ -12,11 +12,11 @@ function initUserList(param, success, fail) {
     api.get(`searchall유저만들주소`,param).then(success).catch(fail);
 }
 
-function searchTeamkeyword(param, success, fail){
+function searchteam(param, success, fail){
     api.get(`/search/team`, {params : {keyword:param}}).then(success).catch(fail);
 }
 
-function searchUserkeyword(param, success, fail){
+function searchUser(param, success, fail){
     api.get(`/search/user`,  {params : {keyword:param}}).then(success).catch(fail);
 }
 
@@ -33,4 +33,4 @@ function keywordCheck(param, success, fail) {
 }
 
 
-export {initTeamList,keywordCheck, initUserList,searchTeamkeyword, searchUserkeyword,searchTeamID,searchprofileID};
+export {initTeamList,keywordCheck, initUserList,searchteam, searchUser,searchTeamID,searchprofileID};
