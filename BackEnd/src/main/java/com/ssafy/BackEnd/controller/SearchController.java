@@ -34,16 +34,10 @@ public class SearchController {
         HttpStatus status;
         List<Profile> userList = profileService.showFindUserList(keyword);
         System.out.println("전달 받은 값 : " + keyword);
-        if (userList != null) {
-            status = HttpStatus.OK;
-            System.out.println("success\n" + userList.get(0).getName());
-            logger.info("INFO SUCCESS");
-        } else {
-            status = HttpStatus.NO_CONTENT;
-            System.out.println("no searched userlist");
-            logger.info("NO SEARCHED USERLIST");
-        }
-            return new ResponseEntity<>(userList, status);
+
+        status = HttpStatus.OK;
+        System.out.println("success\n" + userList.get(0).getName());
+        return new ResponseEntity<>(userList, status);
     }
 
     @GetMapping("/user/{profile_id}")
@@ -78,16 +72,9 @@ public class SearchController {
         HttpStatus status;
         List<Team> teamList = teamService.showFindTeamList(keyword);
         System.out.println("keyword : "+keyword);
-        if(teamList != null) {
-            status = HttpStatus.OK;
-            System.out.println("success\n"+teamList.get(0).getTeam_id());
-            logger.info("INFO SUCCESS");
-        } else {
-            status = HttpStatus.NO_CONTENT;
-            System.out.println("no searched teams");
-            logger.info("SEARCHED NULL");
-            //throw new CustomException("no searched teams", ErrorCode.NO_DATA_ERROR);
-        }
+
+        status = HttpStatus.OK;
+        System.out.println("success\n"+teamList.get(0).getTeam_id());
 
         return new ResponseEntity<>(teamList, status);
     }
