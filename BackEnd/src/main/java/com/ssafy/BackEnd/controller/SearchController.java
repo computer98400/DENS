@@ -36,7 +36,7 @@ public class SearchController {
         System.out.println("전달 받은 값 : " + keyword);
 
         status = HttpStatus.OK;
-        System.out.println("success\n" + userList.get(0).getName());
+        System.out.println("status : "+status);
         return new ResponseEntity<>(userList, status);
     }
 
@@ -73,9 +73,8 @@ public class SearchController {
         List<Team> teamList = teamService.showFindTeamList(keyword);
         System.out.println("keyword : "+keyword);
 
-        status = HttpStatus.OK;
-        System.out.println("success\n"+teamList.get(0).getTeam_id());
 
+        status = HttpStatus.OK;
         return new ResponseEntity<>(teamList, status);
     }
 
