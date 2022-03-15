@@ -35,17 +35,15 @@ export default function Search() {
     //초기화
     useEffect(() => {
         searchteam("", (response) => {
-            // console.log("hi");
             setTeamList(response.data)
         }, (error) => {
-            console.log("hi")
-            // console.log("check")
             console.log(error)
         });
         searchUser("", (response) => {
-            // console.log(response);
             setUserList(response.data)
-        }, (error) => { console.log(error) });
+        }, (error) => {
+            console.log(error)
+        });
     }, []);
     var listTest;
     //team data in
@@ -64,18 +62,14 @@ export default function Search() {
     
     const searchKeyword = (e) => {
         setNullSearch(true);
-
-        // api.get(`/search/team`, { params: { keyword: e.target.value } }).then();
-        
         searchteam(e.target.value, (response) => {
-            console.log("chekc");
             setTeamList(response.data)
         }, (error) => {
-            if (error.response.status == '400') {
-                initList(1)
-            }
+            console.log(error);
         });
-        searchUser(e.target.value, (response) => { setUserList(response.data) }, (error) => { initList(2) });
+        searchUser(e.target.value, (response) => {
+            setUserList(response.data)
+        }, (error) => { initList(2) });
     }
     return (
         <Container>
