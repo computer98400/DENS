@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect } from 'react'
 import { useCookies } from 'react-cookie'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch,  useStore } from 'react-redux'
 import { useNavigate, Outlet } from 'react-router-dom'
 import { apiInstance } from '../../api'
 import { getMember, test11 } from '../../api/test'
@@ -19,9 +19,13 @@ import { Container, Navbar } from 'react-bootstrap'
 import styled from 'styled-components';
 
 export default function Back(props) {
+  const store = useStore();
+
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  const token = useSelector((state) => state.user.token)
+  const user = store.getState();
+
+  const token = user.user.token;
   const [cookies] = useCookies()
 
   useEffect(() => {

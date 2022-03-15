@@ -12,6 +12,9 @@ import { useStore, useSelector } from 'react-redux';
 
 export default function TeamDetail(props) {
 	const store = useStore();
+	const user = store.getState();
+	const token = user.user.token;
+	const profileID = user.user.profileid;
 	let navigate = useNavigate();
     const [teamTitle, setTeamTitle] = useState('');
     const [teamContent, setTeamContent] = useState('');
@@ -20,15 +23,15 @@ export default function TeamDetail(props) {
     const [showInput, setShowInput] = useState(false);
 	const [editInput, setEditInput] = useState('');
 	const membersImgsList = [];
-    const token = useSelector(state => state.user.token);
-	const profileId = store.getState().user.profileid;
+    // const token = useSelector(state => state.user.token);
+	// const profileId = store.getState().user.profileid;
 
     const teamId = useParams().id;
 
 	// 현재 유저가 Leader인지 판단
 	const LeaderSettings = styled.div`
 		${() => {
-				return checkId == profileId ? "display:flex;" : "display:none;";
+				return checkId == profileID ? "display:flex;" : "display:none;";
 		}}
 	`
 	// console.log(checkId, profileA)?
@@ -65,7 +68,7 @@ export default function TeamDetail(props) {
 			// Leader만 수정 버튼 활성화
 		const TextBox = styled.div`
 				${() => {
-					return checkId == profileId ? "display : flex;" : "display: none;";
+					return checkId == profileID ? "display : flex;" : "display: none;";
 				}}
 		`
 
@@ -76,14 +79,14 @@ export default function TeamDetail(props) {
 		  // 글 수정 완료 Btn
 		const editSubmit = (params) => {
 			editTeamContent(
-				teamId, profileId, params,
+				teamId, profileID, params,
 				(response) => {
 					console.log(response);
 					window.location.replace(`/auth/team/${teamId}`)
 				},
 				(error) => {
 					console.log(error);
-					console.log(teamId, profileId, params)
+					console.log(teamId, profileID, params)
 				}
 			)
 		}

@@ -1,49 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import { Outlet } from 'react-router-dom';
 import styled from 'styled-components';
-// import Searchbigbox from './Searchbigbox';
-import dummy from '../../db/data.json';
 import TeamList from './TeamList';
 import UserList from './UserList';
-// import AllList from './AllList';
 import Slider from 'react-slick';
-import { searchTeamkeyword, searchUserkeyword } from '../../api/search';
+import { searchteam, searchUser } from '../../api/search';
+import { useStore } from 'react-redux';
+import { apiInstance } from '../../api';
 
-// import '../../css/search.css';
+const api = apiInstance();
+
+
 export default function Search() {
-
+    const store = useStore();
+    const user = store.getState();
     const [teamList, setTeamList] = useState([]);
     const [userList, setUserList] = useState([]);
     const [totalList, setTotalList] = useState([]);
     const [nullSearch, setNullSearch] = useState(true);
-    const initList = (data) => {
-        if (data === 1) {
-            setTeamList([]);
-        } else {
-            setUserList([]);
-        }
-    }
-
-    //초기화
-    useEffect(() => {
-        searchTeamkeyword("", (response) => {
-            console.log(response);
-            setTeamList(response.data)
-        }, (error) => { console.log(error) });
-        searchUserkeyword("", (response) => { setUserList(response.data) }, (error) => { console.log(error) });
-    }, []);
-    
-    const searchKeyword = (e) => {
-        
-        setNullSearch(true);
-        searchTeamkeyword(e.target.value, (response) => { setTeamList(response.data) }, (error) => { initList(1) });
-        searchUserkeyword(e.target.value, (response) => { setUserList(response.data) }, (error) => { initList(2) });
-       // setTotalList(...teamList, ...userList);
-        //title, content, profile_id
-        //teammember(사람)
-        //keyword
-    }
-    
     const settings = {
         speed: 200,
         infinite: false,
@@ -51,6 +24,59 @@ export default function Search() {
         slidesToScroll: 1
     }
 
+
+    const initList = (data) => {
+        if (data === 1) {
+            setTeamList([]);
+        } else {
+            setUserList([]);
+        }
+    }
+    //초기화
+    useEffect(() => {
+        searchteam("", (response) => {
+            // console.log("hi");
+            setTeamList(response.data)
+        }, (error) => {
+            console.log("hi")
+            // console.log("check")
+            console.log(error)
+        });
+        searchUser("", (response) => {
+            // console.log(response);
+            setUserList(response.data)
+        }, (error) => { console.log(error) });
+    }, []);
+    var listTest;
+    //team data in
+    useEffect(() => {
+        return(
+            listTest = teamList.map((single) => {
+                <li key={single.id}>{ single.title}</li>
+            })
+        )
+    }, [teamList])
+
+    //user data in
+    useEffect(() => {
+        // console.log("userList change");
+    }, [userList])
+    
+    const searchKeyword = (e) => {
+        setNullSearch(true);
+
+        // api.get(`/search/team`, { params: { keyword: e.target.value } }).then();
+        
+        searchteam(e.target.value, (response) => {
+            console.log("chekc");
+            setTeamList(response.data)
+        }, (error) => {
+            if (error.response.status == '400') {
+                initList(1)
+            }
+        });
+        searchUser(e.target.value, (response) => { setUserList(response.data) }, (error) => { initList(2) });
+    }
     return (
         <Container>
             <SearchInput>
@@ -66,6 +92,7 @@ export default function Search() {
                 </nav>
             </SearchInput>
             <br></br>
+            <div style={{width:'1300px', marginLeft:'300px'}}>
             {
                 nullSearch ?
                     <Slider {...settings} style={{display:'flex'}}>
@@ -73,7 +100,8 @@ export default function Search() {
                     <UserList userlist={userList} />
                 </Slider>
                 : ''
-            }
+                }
+            </div>
         </Container>
         )
 }
