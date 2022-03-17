@@ -2,8 +2,6 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useCookies } from 'react-cookie'
 import { useDispatch,  useStore } from 'react-redux'
-import { Outlet } from 'react-router-dom'
-import { createRooms, showRooms } from '../../api/messanger'
 import { API_BASE_URL } from '../../config'
 import MessangerCard from './MessangerCard'
 import styled from 'styled-components'
@@ -12,9 +10,7 @@ export default function Messenger() {
   const user = store.getState();
   const token = user.user.token;
   const id = user.user.profileid;
-  const dispatch = useDispatch()
-  // const token = useSelector((state) => state.user.token)
-  // const id = useSelector((state) => state.user.profileid)
+  const dispatch = useDispatch();
   const [cookie] = useCookies(['token'])
   const [temp, setTemp] = useState([])
   useEffect(() => {
@@ -26,9 +22,9 @@ export default function Messenger() {
       },
     })
     authAxios
-      .get(`/chat/rooms/${id}`)
+      .get(`/chat/rooms/${92}`)
       .then((res) => {
-        // console.log(res)
+        console.log(res)
         setTemp(res.data)
       })
       .catch((error) => {

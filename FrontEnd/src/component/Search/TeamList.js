@@ -42,7 +42,7 @@ export default function TeamList( props) {
 
     return (
         <ContainerT>
-                    <Modal open={modalppen} close={closeModal} content={modalcontent} gomessanger={gomessanger} header={modaltitle }>{ modaltitle}</Modal>
+            <Modal open={modalppen} close={closeModal} content={modalcontent} gomessanger={gomessanger} header={modaltitle }>{ modaltitle}</Modal>
         <SectionName>회원님과 연관될만한 팀리스트</SectionName>
 
         

@@ -20,7 +20,6 @@ import styled from 'styled-components';
 
 export default function Back(props) {
   const store = useStore();
-
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const user = store.getState();
